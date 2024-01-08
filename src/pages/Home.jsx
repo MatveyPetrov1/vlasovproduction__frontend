@@ -58,6 +58,7 @@ const HomePage = () => {
             />
             <div ref={applicationRef}>
               <Application />
+              <Application />
             </div>
           </div>
         </div>
