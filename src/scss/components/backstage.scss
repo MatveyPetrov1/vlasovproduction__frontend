@@ -1,0 +1,28 @@
+.backstage {
+  &__block {
+    padding: 43px 0;
+    column-gap: 14px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 90px;
+    align-items: center;
+  }
+  &__content__wrapper {
+    overflow: hidden;
+    max-width: 1414px;
+  }
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    text-align: center;
+  }
+  &__item {
+    display: flex;
+    column-gap: 38px;
+
+    img {
+      width: 446px;
+      height: 305px;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.promotionphotography {
+  background-image: url("../../../assets/img/background.png");
+
+  &__carousel {
+    margin-bottom: 110px;
+  }
+  &__aboutus {
+    font-size: 55px;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    &__title {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__item1 {
+    margin-bottom: 110px;
+    &__title {
+      font-size: 55px;
+      font-family: "Playfair Display", serif;
+      margin-bottom: 100px;
+      text-align: center;
+    }
+    &__block {
+      padding: 75px 94px 58px 94px;
+      background-color: #fff;
+      display: flex;
+      column-gap: 62px;
+      border: 1px solid #000;
+
+      &__left {
+        display: flex;
+        column-gap: 26px;
+        &__main {
+          img {
+            width: 558px;
+            height: 439px;
+            background-color: grey;
+          }
+        }
+        &__second {
+          display: flex;
+          flex-direction: column;
+          img,
+          video {
+            margin-bottom: 17px;
+            width: 83px;
+            height: 74px;
+            background-color: grey;
+          }
+        }
+      }
+      &__right {
+        h1 {
+          font-family: "Playfair Display", serif;
+          font-size: 44px;
+          margin-bottom: 36px;
+        }
+        p {
+          font-size: 30px;
+          font-family: "Taylor Sans 400";
+          max-width: 600px;
+        }
+      }
+    }
+  }
+}

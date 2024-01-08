@@ -1,0 +1,310 @@
+@import url("./components/allcomponents.scss");
+@import url("./fonts.scss");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.wrapper {
+  padding: 0 70px;
+}
+
+.button {
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+}
+
+.fullscreen__wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+.homepage__bg {
+  background-image: url("../assets/img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.topimage {
+  width: 100%;
+  height: 476px;
+  background-color: grey;
+  // margin-bottom: 90px;
+}
+
+@media (max-width: 1600px) {
+  .header {
+    font-size: 21px;
+    padding: 25px;
+    &__left {
+      ul {
+        column-gap: 90px;
+      }
+    }
+    &__right {
+      ul {
+        column-gap: 90px;
+      }
+    }
+  }
+  .promo {
+    img {
+      width: 400px;
+    }
+  }
+  .aboutus {
+    &__block {
+      padding: 44px 243px 98px 134px;
+      h1 {
+        font-size: 60px;
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+  .photography {
+    &__title {
+      font-size: 44px;
+    }
+    &__cards {
+      margin-bottom: 0px;
+    }
+    &__card {
+      margin-bottom: 80px;
+
+      h1 {
+        margin-bottom: 35px;
+        font-size: 35px;
+      }
+      p {
+        font-size: 25px;
+        max-width: 750px;
+        margin-bottom: 75px;
+      }
+      a {
+        font-size: 25px;
+      }
+      &__images {
+        margin-bottom: 67px;
+        img {
+          width: 250px;
+          height: 140px;
+        }
+      }
+      &__image {
+        width: 550px;
+        height: 700px;
+      }
+    }
+  }
+  .videography {
+    &__title {
+      font-size: 44px;
+      margin-bottom: 80px;
+    }
+    &__content {
+      padding: 51px 260px;
+      h1 {
+        font-size: 30px;
+      }
+    }
+    a {
+      padding: 12px 50px;
+      font-size: 27px;
+    }
+  }
+  .backstage {
+    &__title {
+      font-size: 44px;
+    }
+  }
+  .carousel {
+    max-width: 1600px;
+    &__items {
+      column-gap: 40px;
+      &__content {
+        width: 400px;
+        height: 280px;
+      }
+    }
+  }
+  .feedback {
+    &__videos {
+      video {
+        width: 430px;
+        height: 270px;
+      }
+    }
+    &__title {
+      h1 {
+        font-size: 44px;
+      }
+    }
+    &__card {
+      max-width: 600px;
+    }
+  }
+  .application {
+    &__name {
+      &_error {
+        left: 62%;
+      }
+    }
+    &__phone {
+      &_error {
+        left: 56%;
+      }
+    }
+    &__text {
+      &_error {
+        left: 55%;
+      }
+    }
+    img {
+      width: 29px;
+      height: 29px;
+    }
+    &__wrapper {
+      padding: 86px 90px 86px 111px;
+    }
+    &__left {
+      &__success {
+        font-size: 17px;
+      }
+      h1 {
+        font-size: 40px;
+      }
+      a {
+        padding: 8px 30px;
+      }
+    }
+    &__right {
+      h1 {
+        font-size: 30px;
+      }
+    }
+    &__telegram {
+      column-gap: 21px;
+      p {
+        font-size: 27px;
+      }
+    }
+    &__whatsup {
+      column-gap: 21px;
+      p {
+        font-size: 27px;
+      }
+    }
+  }
+}

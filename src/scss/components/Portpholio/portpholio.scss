@@ -1,0 +1,33 @@
+.portpholio {
+  background-image: url("../../../assets/img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__card {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-size: 55px;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    margin-bottom: 120px;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 106px;
+    margin-bottom: 441px;
+    img {
+      width: 704px;
+      height: 467px;
+      background-color: grey;
+      margin-bottom: 23px;
+    }
+    p {
+      font-size: 52px;
+      font-family: "Playfair Display", serif;
+      color: #000;
+    }
+  }
+}
