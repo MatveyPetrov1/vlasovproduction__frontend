@@ -5,7 +5,8 @@ import arrowDown from "../assets/img/arrowdown.svg";
 import { setCity } from "../redux/slices/applicationSlice";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenCity, setIsOpenCity] = useState(false);
+  const [isOpenServices, setIsOpenServices] = useState(false);
   const [currentCity, setCurrentCity] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const { city } = useSelector((state) => state.application);
@@ -27,7 +28,8 @@ const Header = () => {
         headerRef.current &&
         !event.composedPath().includes(headerRef.current)
       ) {
-        setIsOpen(false);
+        setIsOpenCity(false);
+        setIsOpenServices(false);
       }
     };
     document.body.addEventListener("click", handleClickOutside);
@@ -51,7 +53,7 @@ const Header = () => {
   };
 
   const onClickService = () => {
-    setCurrentPage(2);
+    setIsOpenServices(!isOpenServices);
   };
 
   const onClickContacts = () => {
@@ -73,14 +75,14 @@ const Header = () => {
             <ul>
               <li>
                 <div
-                  onClick={() => setIsOpen(!isOpen)}
+                  onClick={() => setIsOpenCity(!isOpenCity)}
                   className="header__city"
                 >
                   <p className="header__city__choose">{city}</p>
                   <div className="header__city__arrow">
                     <img src={arrowDown} alt="" />
                   </div>
-                  {isOpen && (
+                  {isOpenCity && (
                     <div className="header__popup">
                       <ul>
                         <li
@@ -166,12 +168,25 @@ const Header = () => {
                   onClick={onClickService}
                   className={
                     currentPage === 2
-                      ? "header__nav header__nav__active"
+                      ? "header__nav header__nav__active header__services"
                       : "header__nav"
                   }
-                  to="/"
                 >
                   Услуги
+                  {isOpenServices ? (
+                    <div className=" header__services__popup ">
+                      <ul>
+                        <li className="header__services__popup__item">
+                          <Link to="/school">Школьная фотосъемка</Link>
+                        </li>
+                        <li className="header__services__popup__item">
+                          <Link to="/promotion">Рекламная фотосъемка</Link>
+                        </li>
+                      </ul>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </Link>
               </li>
               <li>
