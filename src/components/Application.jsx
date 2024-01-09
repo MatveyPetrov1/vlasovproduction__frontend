@@ -1,12 +1,10 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import telegram from "../assets/img/telegram.svg";
 import whatsup from "../assets/img/whatsup.svg";
 import { Link } from "react-router-dom";
-import { setApplicationOffset } from "../redux/slices/offsetSlice";
 import { setName, setPhone, setText } from "../redux/slices/applicationSlice";
-import completed from "../assets/img/сomplete_icon.svg";
 
 const Application = () => {
   const applicationRef = useRef();
@@ -18,18 +16,6 @@ const Application = () => {
   const [isSend, setIsSend] = useState(false);
 
   const { name, phone, text, city } = useSelector((state) => state.application);
-
-  useEffect(() => {
-    const getApplicationOffset = () => {
-      const newOffset = applicationRef.current.offsetTop;
-      dispatch(setApplicationOffset(newOffset));
-    };
-    getApplicationOffset();
-    window.addEventListener("resize", getApplicationOffset);
-    return () => {
-      window.removeEventListener("resize", getApplicationOffset);
-    };
-  }, []);
 
   const sendApplication = async () => {
     const { data } = await axios.post("http://localhost:4444/application", {

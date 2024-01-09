@@ -11,12 +11,9 @@ const PhotographyCard = ({ imageUrl, url1, url2, text, title }) => {
 
   return (
     <div className="photography__card">
-      {/* <img className="photography__card__image" src={imageUrl} alt="" /> */}
-
       <div className="photography__card__content">
         <div className="photography__card__images"></div>
         <h1>{title}</h1>
-        {/* <p>{text}</p> */}
         <div className="photography__buttons">
           <Link
             className="button photography__button"

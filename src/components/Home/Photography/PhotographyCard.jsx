@@ -11,7 +11,6 @@ const PhotographyCard = ({ imageUrl, url1, url2, text, title }) => {
 
   return (
     <div className="photography__card">
-      {/* <img className="photography__card__image" src={imageUrl} alt="" /> */}
       <div className="photography__card__left">
         <div
           style={{

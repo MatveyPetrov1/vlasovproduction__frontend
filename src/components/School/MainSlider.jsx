@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import ArrowLeft from "../../assets/img/school__arrow_left.svg";
 import ArrowRight from "../../assets/img/school__arrow_right.svg";
 const SmallSlider = ({ onClickClose }) => {

@@ -2,26 +2,15 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Application from "../components/Application";
 import { fetchPortpholioItems } from "../redux/slices/portpholioItems";
-import Header from "../components/Header";
 import Loader from "../components/Loader";
 
 const PromotionPortpholio = () => {
   const { items, status } = useSelector((state) => state.portpholio);
-  const { applicationOffset } = useSelector((state) => state.offset);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchPortpholioItems());
   }, []);
-
-  const onScrollTo = (component) => {
-    if (component === applicationOffset) {
-      window.scrollTo({
-        top: component,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <>
@@ -29,7 +18,6 @@ const PromotionPortpholio = () => {
         <Loader />
       ) : (
         <div className="portpholioitem wow animate__animated animate__fadeIn">
-          {/* <Header onScrollTo={onScrollTo} /> */}
           <div className="topimage"></div>
           <div className="container">
             <div className="wrapper">

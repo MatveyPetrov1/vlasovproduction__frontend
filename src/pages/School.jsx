@@ -4,27 +4,16 @@ import Application from "../components/Application";
 import SchoolPhotographyCard from "../components/School/SchoolCard";
 import SchoolPhotographyCard2 from "../components/School/SchoolCard2";
 import { fetchSchoolItems } from "../redux/slices/schoolItems";
-import Header from "../components/Header";
 import Loader from "../components/Loader";
 import CarouselVid from "../components/CarouselVid";
 
 const SchoolPhotography = () => {
   const dispatch = useDispatch();
   const { items, status } = useSelector((state) => state.school);
-  const { applicationOffset } = useSelector((state) => state.offset);
 
   useEffect(() => {
     dispatch(fetchSchoolItems());
   }, []);
-
-  const onScrollTo = (component) => {
-    if (component === applicationOffset) {
-      window.scrollTo({
-        top: component,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <div>

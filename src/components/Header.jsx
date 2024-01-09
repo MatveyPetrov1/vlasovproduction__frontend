@@ -4,14 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import arrowDown from "../assets/img/arrowdown.svg";
 import { setCity } from "../redux/slices/applicationSlice";
 
-const Header = ({ onScrollTo }) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentCity, setCurrentCity] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
+  const { city } = useSelector((state) => state.application);
+  const { feedbackOffset } = useSelector((state) => state.offset);
 
-  const { photographyOffset, applicationOffset, feedbackOffset } = useSelector(
-    (state) => state.offset
-  );
   const headerRef = useRef();
   const dispatch = useDispatch();
 
@@ -61,6 +60,10 @@ const Header = ({ onScrollTo }) => {
 
   const onClickFeedback = () => {
     setCurrentPage(4);
+    window.scrollTo({
+      top: feedbackOffset,
+      behavior: "smooth",
+    });
   };
   return (
     <header className="header" ref={headerRef}>
@@ -73,7 +76,7 @@ const Header = ({ onScrollTo }) => {
                   onClick={() => setIsOpen(!isOpen)}
                   className="header__city"
                 >
-                  <p className="header__city__choose">Выбрать город</p>
+                  <p className="header__city__choose">{city}</p>
                   <div className="header__city__arrow">
                     <img src={arrowDown} alt="" />
                   </div>
@@ -154,7 +157,6 @@ const Header = ({ onScrollTo }) => {
                       ? "header__nav header__nav__active"
                       : "header__nav"
                   }
-                  to="/portpholio"
                 >
                   Портфолио
                 </Link>
@@ -203,11 +205,7 @@ const Header = ({ onScrollTo }) => {
                 </Link>
               </li>
               <li>
-                <Link
-                  onClick={() => onScrollTo(applicationOffset)}
-                  className="button header__button"
-                  to=""
-                >
+                <Link className="button header__button" to="">
                   Оставить заявку
                 </Link>
               </li>

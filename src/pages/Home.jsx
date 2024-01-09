@@ -7,7 +7,6 @@ import Videography from "../components/Home/Videography";
 import Backstage from "../components/Home/Backstage";
 import Application from "../components/Application";
 import Feedback from "../components/Home/Feedback/index";
-import Header from "../components/Header";
 import { fetchHomeItems } from "../redux/slices/homeItems";
 import Loader from "../components/Loader";
 import WOW from "wow.js";
@@ -25,13 +24,6 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(fetchHomeItems());
   }, []);
-
-  const onScrollTo = (component) => {
-    window.scrollTo({
-      top: component - 150,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <>
@@ -57,7 +49,6 @@ const HomePage = () => {
               feedbackCards={items.feedbackCards}
             />
             <div ref={applicationRef}>
-              <Application />
               <Application />
             </div>
           </div>

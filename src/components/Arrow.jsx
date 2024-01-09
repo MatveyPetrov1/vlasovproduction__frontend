@@ -1,6 +1,4 @@
 import React from "react";
-import arrow__down from "../assets/img/homepage__arrow__down.svg";
-import arrow__up from "../assets/img/homepage__arrow__up.svg";
 
 const Arrow = () => {
   const onScrollTop = () => {
@@ -11,7 +9,6 @@ const Arrow = () => {
   };
   return (
     <div className="home__arrow__wrapper" onClick={onScrollTop}>
-      {/* <img src={arrow__up} className="home__arrow__up" alt="" /> */}
       <svg
         fill="#fff"
         height="35px"

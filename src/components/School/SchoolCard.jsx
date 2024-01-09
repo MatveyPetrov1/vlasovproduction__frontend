@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import MainSlider from "./MainSlider";
 
 const SchoolPhotographyCard = ({
