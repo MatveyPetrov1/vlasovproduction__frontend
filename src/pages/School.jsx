@@ -11,6 +11,8 @@ const SchoolPhotography = () => {
   const dispatch = useDispatch();
   const { items, status } = useSelector((state) => state.school);
 
+  console.log(items);
+
   useEffect(() => {
     dispatch(fetchSchoolItems());
   }, []);
@@ -20,8 +22,7 @@ const SchoolPhotography = () => {
       {status === "loading" ? (
         <Loader />
       ) : (
-        <div className="school wow animate__animated animate__fadeIn">
-          {/* <Header onScrollTo={onScrollTo} /> */}
+        <div className="school main__fade">
           <div className="topimage"></div>
           <div className="container">
             <div className="school__wrapper">

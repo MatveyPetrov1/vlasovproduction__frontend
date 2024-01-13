@@ -9,9 +9,7 @@ const Photography = ({ photographyCards }) => {
       <div className="container">
         <div className="wrapper">
           <div className="photography__wrapper">
-            <div className="photography__title wow animate__animated ">
-              Фотосъемка
-            </div>
+            <div className="photography__title">Фотосъемка</div>
             {photographyCards.map((obj, index) => {
               return <PhotographyCard key={index} {...obj} />;
             })}

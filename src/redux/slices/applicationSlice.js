@@ -4,7 +4,7 @@ const initialState = {
   name: "",
   phone: "",
   text: "",
-  city: "Санкт-Петербург",
+  city: "Выберите город",
 };
 
 const applicationSlice = createSlice({

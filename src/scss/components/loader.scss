@@ -11,5 +11,17 @@
   z-index: 1000;
   img {
     width: 400px;
+    animation: loader-logo 1.2s;
+  }
+}
+
+@keyframes loader-logo {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }

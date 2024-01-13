@@ -10,6 +10,7 @@ const SchoolPhotographyCard = ({
   pages,
   subdesc,
   smallSlider,
+  bigSlider,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const onClickClose = () => {
@@ -20,7 +21,9 @@ const SchoolPhotographyCard = ({
   };
   return (
     <div className="school__card">
-      {isOpen && <MainSlider onClickClose={onClickClose} />}
+      {isOpen && (
+        <MainSlider onClickClose={onClickClose} bigSlider={bigSlider} />
+      )}
       <div className="school__card__left">
         <div className="school__card__left__title">
           <h1>{title}</h1>

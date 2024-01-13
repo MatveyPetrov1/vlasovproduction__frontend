@@ -1,6 +1,19 @@
 .application {
   background-color: #000;
   color: #fff;
+
+  &__window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+  }
   &__container {
     margin: 0 auto;
     max-width: 1500px;
@@ -52,7 +65,7 @@
     }
     &__success {
       font-family: "Taylor Sans 400";
-      font-size: 20px;
+      font-size: 18px;
       animation: success-show 0.5s cubic-bezier(0.25, 0.75, 0.5, 1.25);
       &__top {
         position: relative;
@@ -65,15 +78,18 @@
       // }
       &__text:before {
         content: "";
-        top: 0;
+        top: 2%;
         left: 7%;
-        width: 20px;
-        height: 40px;
+        width: 18px;
+        height: 35px;
         border-bottom: 3px solid rgb(37, 172, 37);
         border-right: 3px solid rgb(37, 172, 37);
         position: absolute;
         transform: rotate(40deg);
         animation: success-complete 1s;
+      }
+      &_button {
+        padding: 1px;
       }
     }
     img {
@@ -87,15 +103,15 @@
       margin-bottom: 35px;
     }
     a {
-      padding: 10px 40px;
+      padding: 10px 30px;
       display: inline-block;
       background-color: #fff;
       color: #000;
       font-family: "Taylor Sans 400";
-      font-size: 19px;
+      font-size: 18px;
       border-radius: 50px;
       margin-top: 17px;
-      transition: 0.2s ease-in-out;
+      transition: 0.3s ease-in-out;
       border: 2px solid #000;
       animation: show-button 0.5s cubic-bezier(0.25, 0.75, 0.5, 1.25);
     }
@@ -150,7 +166,7 @@
     padding: 56px 60px 56px 81px;
     display: flex;
     column-gap: 300px;
-    max-height: 483px;
+    max-height: 392px;
   }
 }
 

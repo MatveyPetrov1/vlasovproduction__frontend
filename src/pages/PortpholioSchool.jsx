@@ -17,7 +17,7 @@ const PortpholioSchool = () => {
       {status === "loading" ? (
         <Loader />
       ) : (
-        <div className="portpholioitem wow animate__animated animate__fadeIn">
+        <div className="portpholioitem main__fade">
           {/* <Header onScrollTo={onScrollTo} /> */}
           <div className="topimage"></div>
           <div className="container">

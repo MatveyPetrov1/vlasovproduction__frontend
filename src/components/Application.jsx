@@ -107,7 +107,6 @@ const Application = () => {
               {isSend ? (
                 <div className="application__left__success">
                   <div className="application__left__success__top">
-                    {/* <img src={completed} alt="" /> */}
                     <p className="application__left__success__text">
                       Успешно! Ваша заявка отправлена и будет рассмотрена в
                       самое ближайшее время!

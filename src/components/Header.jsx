@@ -3,17 +3,29 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import arrowDown from "../assets/img/arrowdown.svg";
 import { setCity } from "../redux/slices/applicationSlice";
+import {
+  setCurrentPage,
+  setApplicationIsOpen,
+} from "../redux/slices/headerSlice";
+import Application from "./Application";
 
 const Header = () => {
   const [isOpenCity, setIsOpenCity] = useState(false);
   const [isOpenServices, setIsOpenServices] = useState(false);
-  const [currentCity, setCurrentCity] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [isOpenPortpholio, setIsOpenPortpholio] = useState(false);
+  const [currentCity, setCurrentCity] = useState(10);
+  const [applicationIsOpen, setApplicationIsOpen] = useState(false);
   const { city } = useSelector((state) => state.application);
   const { feedbackOffset } = useSelector((state) => state.offset);
 
-  const headerRef = useRef();
+  const applicationRef = useRef();
+
+  const cityRef = useRef();
+  const serviceRef = useRef();
+  const portpholioRef = useRef();
   const dispatch = useDispatch();
+
+  const { currentPage } = useSelector((state) => state.header);
 
   const onScrollToTop = () => {
     window.scrollTo({
@@ -24,14 +36,32 @@ const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        headerRef.current &&
-        !event.composedPath().includes(headerRef.current)
-      ) {
+      if (cityRef.current && !event.composedPath().includes(cityRef.current)) {
         setIsOpenCity(false);
+      }
+      if (
+        serviceRef.current &&
+        !event.composedPath().includes(serviceRef.current)
+      ) {
         setIsOpenServices(false);
       }
+      if (
+        portpholioRef.current &&
+        !event.composedPath().includes(portpholioRef.current)
+      ) {
+        setIsOpenPortpholio(false);
+
+        // console.log(portpholioRef.current);
+      }
+      if (
+        applicationRef.current &&
+        !event.composedPath().includes(applicationRef.current)
+      ) {
+        setApplicationIsOpen(false);
+        console.log(applicationRef.current);
+      }
     };
+
     document.body.addEventListener("click", handleClickOutside);
     return () => {
       document.body.removeEventListener("click", handleClickOutside);
@@ -45,38 +75,45 @@ const Header = () => {
 
   const onClickMain = () => {
     onScrollToTop();
-    setCurrentPage(0);
+    dispatch(setCurrentPage(0));
   };
 
   const onClickPortpholio = () => {
-    setCurrentPage(1);
+    setIsOpenPortpholio(!isOpenPortpholio);
   };
 
   const onClickService = () => {
     setIsOpenServices(!isOpenServices);
   };
 
-  const onClickContacts = () => {
-    setCurrentPage(3);
-  };
-
   const onClickFeedback = () => {
-    setCurrentPage(4);
     window.scrollTo({
-      top: feedbackOffset,
+      top: feedbackOffset - 130,
       behavior: "smooth",
     });
   };
+
+  const onClickContacts = () => {
+    setApplicationIsOpen(!applicationIsOpen);
+  };
   return (
-    <header className="header" ref={headerRef}>
+    <header className="header">
       <div className="container">
         <div className="header__wrapper">
+          {applicationIsOpen && (
+            <div className="application__window">
+              <div ref={applicationRef}>
+                <Application />
+              </div>
+            </div>
+          )}
           <div className="header__left">
             <ul>
               <li>
                 <div
                   onClick={() => setIsOpenCity(!isOpenCity)}
                   className="header__city"
+                  ref={cityRef}
                 >
                   <p className="header__city__choose">{city}</p>
                   <div className="header__city__arrow">
@@ -156,11 +193,34 @@ const Header = () => {
                   onClick={onClickPortpholio}
                   className={
                     currentPage === 1
-                      ? "header__nav header__nav__active"
-                      : "header__nav"
+                      ? "header__nav header__nav__active header__services"
+                      : "header__nav header__portpholio"
                   }
+                  ref={portpholioRef}
                 >
                   Портфолио
+                  {isOpenPortpholio && (
+                    <div className="header__portpholio__popup">
+                      <ul>
+                        <li className="header__portpholio__popup__item">
+                          <Link
+                            to="/portpholio/school"
+                            onClick={() => dispatch(setCurrentPage(1))}
+                          >
+                            Школьная фотосъемка
+                          </Link>
+                        </li>
+                        <li className="header__portpholio__popup__item">
+                          <Link
+                            to="/portpholio/promotion"
+                            onClick={() => dispatch(setCurrentPage(1))}
+                          >
+                            Рекламная фотосъемка
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </Link>
               </li>
               <li>
@@ -168,37 +228,38 @@ const Header = () => {
                   onClick={onClickService}
                   className={
                     currentPage === 2
-                      ? "header__nav header__nav__active header__services"
+                      ? "header__nav header__nav__active"
                       : "header__nav"
                   }
+                  ref={serviceRef}
                 >
                   Услуги
-                  {isOpenServices ? (
+                  {isOpenServices && (
                     <div className=" header__services__popup ">
                       <ul>
                         <li className="header__services__popup__item">
-                          <Link to="/school">Школьная фотосъемка</Link>
+                          <Link
+                            to="/school"
+                            onClick={() => dispatch(setCurrentPage(2))}
+                          >
+                            Школьная фотосъемка
+                          </Link>
                         </li>
                         <li className="header__services__popup__item">
-                          <Link to="/promotion">Рекламная фотосъемка</Link>
+                          <Link
+                            to="/promotion"
+                            onClick={() => dispatch(setCurrentPage(2))}
+                          >
+                            Рекламная фотосъемка
+                          </Link>
                         </li>
                       </ul>
                     </div>
-                  ) : (
-                    ""
                   )}
                 </Link>
               </li>
               <li>
-                <Link
-                  onClick={onClickContacts}
-                  className={
-                    currentPage === 3
-                      ? "header__nav header__nav__active"
-                      : "header__nav"
-                  }
-                  to="/"
-                >
+                <Link onClick={onClickContacts} className="header__nav">
                   Контакты
                 </Link>
               </li>
@@ -207,15 +268,7 @@ const Header = () => {
           <div className="header__right">
             <ul>
               <li>
-                <Link
-                  className={
-                    currentPage === 4
-                      ? "header__nav header__nav__active"
-                      : "header__nav"
-                  }
-                  to="/"
-                  onClick={onClickFeedback}
-                >
+                <Link className="header__nav" to="/" onClick={onClickFeedback}>
                   Отзывы
                 </Link>
               </li>

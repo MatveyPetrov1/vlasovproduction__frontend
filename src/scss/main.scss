@@ -142,6 +142,19 @@ a {
   // margin-bottom: 90px;
 }
 
+.main__fade {
+  animation: fade-in 0.7s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 1600px) {
   .header {
     font-size: 21px;

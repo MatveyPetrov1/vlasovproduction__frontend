@@ -205,39 +205,101 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
-  z-index: 1000;
   left: 0;
   top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 900;
 }
 
 .school_slider {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  column-gap: 100px;
   position: relative;
+  align-items: center;
+
+  &__blocks {
+    position: absolute;
+    width: 65vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  &__left_block {
+    width: 50%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    svg {
+      margin-left: 10%;
+      position: absolute;
+    }
+  }
+  &__left_block:hover {
+    svg {
+      width: 65px;
+      height: 65px;
+      fill: #000;
+    }
+  }
+  &__right_block {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    svg {
+      margin-right: 10%;
+      position: absolute;
+    }
+  }
+  &__right_block:hover {
+    svg {
+      width: 65px;
+      height: 65px;
+      fill: #000;
+    }
+  }
+
   &__arrow {
-    width: 90px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  &__arrow:hover {
+    fill: #000;
   }
   &__close_icon {
     position: absolute;
-    top: -110%;
-    right: -10%;
-    width: 50px;
-    cursor: pointer;
+    top: -20%;
+    right: 5%;
+    width: 45px;
+    transition: all 0.2s ease-in-out;
+  }
+  &__close_icon:hover {
+    fill: rgb(168, 61, 61);
+    animation: close-icon 1s;
   }
   &__items {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 1200px;
-    height: 400px;
+    max-width: 1200px;
+    max-height: 400px;
   }
-  &__item {
-    position: absolute;
+}
+
+@keyframes close-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

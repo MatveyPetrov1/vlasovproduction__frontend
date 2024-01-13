@@ -9,14 +9,11 @@ import Application from "../components/Application";
 import Feedback from "../components/Home/Feedback/index";
 import { fetchHomeItems } from "../redux/slices/homeItems";
 import Loader from "../components/Loader";
-import WOW from "wow.js";
 import Arrow from "../components/Arrow";
+import Fullscreen from "../components/Fullscreen";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-
-  const wow = new WOW();
-  wow.init();
 
   const applicationRef = useRef();
   const { items, status } = useSelector((state) => state.home);
@@ -30,10 +27,10 @@ const HomePage = () => {
       {status === "loading" ? (
         <Loader />
       ) : (
-        <div className=" wow animate__animated animate__fadeIn">
+        <div className="main__fade">
+          <Fullscreen />
           <Arrow />
           <div className="fullscreen__wrapper ">
-            {/* <Header onScrollTo={onScrollTo} /> */}
             <Promo bgImage={items.bgImage} />
           </div>
           <AboutUs {...items.aboutUs} />

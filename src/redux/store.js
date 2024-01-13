@@ -5,6 +5,8 @@ import promotion from "./slices/promotionItems";
 import school from "./slices/schoolItems";
 import application from "./slices/applicationSlice";
 import offset from "./slices/offsetSlice";
+import header from "./slices/headerSlice";
+import homeFullscreen from "./slices/fullscreenHomeSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +16,7 @@ export const store = configureStore({
     school,
     application,
     offset,
+    header,
+    homeFullscreen,
   },
 });

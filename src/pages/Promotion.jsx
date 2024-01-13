@@ -18,7 +18,7 @@ const Promotion = () => {
       {status === "loading" ? (
         <Loader />
       ) : (
-        <div className="promotionPhotography wow animate__animated animate__fadeIn">
+        <div className="promotionPhotography main__fade">
           <div className="topimage"></div>
           <div className="container">
             <div className="wrapper">

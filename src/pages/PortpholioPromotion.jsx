@@ -17,7 +17,7 @@ const PromotionPortpholio = () => {
       {status === "loading" ? (
         <Loader />
       ) : (
-        <div className="portpholioitem wow animate__animated animate__fadeIn">
+        <div className="portpholioitem main__fade">
           <div className="topimage"></div>
           <div className="container">
             <div className="wrapper">
