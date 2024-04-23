@@ -1,21 +1,44 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-import { setfeedbackOffset } from "../../../redux/slices/offsetSlice";
+import { setfeedbackOffset } from "../../../redux/slices/components/feedbackTop";
+import FeedbackCarousel from "../../UI/FeedbackCarousel";
+import CarouselVid from "../../UI/CarouselVid";
+import FeedbackVideo from "./FeedbackVideo";
 
-import FeedbackCarousel from "../../FeedbackCarousel";
-
-const Feedback = ({ videoArr, feedbackCards }) => {
+const Feedback = ({
+  videoArr,
+  feedbackCards,
+  feedbackCardsMobile,
+  feedbackMobileVideos,
+  isMobileAnimation,
+}) => {
+  const feedbackRef = React.useRef();
+  const [isMobile, setIsMobile] = React.useState(true);
   const dispatch = useDispatch();
-  const feedbackRef = useRef();
-  useEffect(() => {
-    const getFeedbackOffset = () => {
-      const newOffset = feedbackRef.current.offsetTop;
-      dispatch(setfeedbackOffset(newOffset));
+
+  React.useEffect(() => {
+    dispatch(setfeedbackOffset(feedbackRef.current.offsetTop));
+
+    if (feedbackRef.current.offsetWidth <= 600) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+
+    const resizeHandler = () => {
+      if (feedbackRef.current.offsetWidth <= 600) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+
+      dispatch(setfeedbackOffset(feedbackRef.current.offsetTop));
     };
-    getFeedbackOffset();
-    window.addEventListener("resize", getFeedbackOffset);
+
+    window.addEventListener("resize", resizeHandler);
+
     return () => {
-      window.removeEventListener("resize", getFeedbackOffset);
+      window.removeEventListener("resize", resizeHandler);
     };
   }, []);
 
@@ -24,13 +47,31 @@ const Feedback = ({ videoArr, feedbackCards }) => {
       <div className="feedback__title">
         <h1>Отзывы</h1>
       </div>
-      <div className="feedback__videos">
-        {videoArr.map((obj, index) => {
-          return <video key={index} src={obj} alt="" />;
-        })}
+      {/* Feedback videos */}
+      <div
+        className={
+          isMobileAnimation ? "feedback__videos" : "feedback__videos wow"
+        }
+        style={isMobileAnimation ? { animation: "none" } : {}}
+      >
+        {isMobile ? (
+          <div className="backstage__items">
+            {feedbackMobileVideos.map((source, index) => (
+              <FeedbackVideo key={index} source={source} />
+            ))}
+          </div>
+        ) : (
+          <CarouselVid sliderVideos={videoArr} mobileSliderVideos={videoArr} />
+        )}
       </div>
+
+      {/* Feedback cards carousel */}
+
       <div className="feedback__carousel">
-        <FeedbackCarousel />
+        <FeedbackCarousel
+          feedbackCards={feedbackCards}
+          feedbackCardsMobile={feedbackCardsMobile}
+        />
       </div>
     </div>
   );

@@ -1,0 +1,356 @@
+@import url("./item.scss");
+
+.promotion {
+  &__background {
+    background-image: url("../../../assets/img/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 1px;
+    padding-bottom: 20px;
+
+    &__white {
+      background-color: #fff;
+      position: relative;
+      z-index: 200;
+    }
+  }
+
+  &__feedback {
+    margin-bottom: 70px;
+  }
+
+  &__aboutus {
+    font-size: 45px;
+    margin-top: 70px;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+
+    &__title {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media (max-width: 1570px) {
+  .promotion {
+    &__aboutus {
+      margin-top: 50px;
+      &__title {
+        font-size: 37px;
+        margin-bottom: 45px;
+      }
+    }
+
+    &__feedback {
+      margin-bottom: 50px;
+    }
+
+    &__item {
+      margin-top: 50px;
+
+      &__title {
+        font-size: 37px;
+        margin-bottom: 50px;
+      }
+
+      &__block {
+        padding: 60px 60px 48px 60px;
+        margin-bottom: 40px;
+        &__left {
+          h1 {
+            font-size: 28px;
+          }
+
+          p {
+            font-size: 19px;
+          }
+        }
+
+        &__right {
+          &__main {
+            div {
+              width: 350px;
+              height: 250px;
+            }
+          }
+
+          &__secondary {
+            div {
+              width: 60px;
+              height: 52px;
+              margin-bottom: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .promotion {
+    &__aboutus {
+      margin-top: 50px;
+      &__title {
+        font-size: 33px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__feedback {
+      margin-bottom: 30px;
+    }
+
+    &__item {
+      margin-top: 50px;
+
+      &__title {
+        font-size: 33px;
+        margin-bottom: 50px;
+      }
+
+      &__block {
+        padding: 50px 50px 38px 50px;
+        margin-bottom: 40px;
+        &__left {
+          h1 {
+            font-size: 24px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+        }
+
+        &__right {
+          &__main {
+            div {
+              width: 300px;
+              height: 200px;
+            }
+          }
+
+          &__secondary {
+            div {
+              width: 60px;
+              height: 52px;
+              margin-bottom: 22px;
+            }
+          }
+
+          &__secondary :last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .promotion {
+    &__aboutus {
+      margin-top: 40px;
+      &__title {
+        font-size: 28px;
+        margin-bottom: 35px;
+      }
+    }
+
+    &__feedback {
+      margin-bottom: 25px;
+    }
+
+    &__item {
+      margin-top: 40px;
+
+      &__title {
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+
+      &__block {
+        padding: 30px 30px 28px 30px;
+        margin-bottom: 40px;
+        &__left {
+          max-width: 40%;
+          h1 {
+            font-size: 19px;
+            margin-bottom: 15px;
+          }
+
+          p {
+            font-size: 12px;
+            max-width: 300px;
+          }
+        }
+
+        &__right {
+          &__main {
+            div {
+              width: 250px;
+              height: 150px;
+            }
+          }
+
+          &__secondary {
+            div {
+              width: 50px;
+              height: 42px;
+              margin-bottom: 12px;
+            }
+          }
+
+          &__secondary :last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .promotion {
+    &__feedback {
+      margin-bottom: 20px;
+    }
+
+    &__aboutus {
+      margin-top: 40px;
+      &__title {
+        font-size: 28px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__item {
+      margin-top: 40px;
+
+      &__title {
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+
+      &__block {
+        padding: 20px 30px 28px 30px;
+        margin-bottom: 40px;
+        &__left {
+          max-width: 50%;
+          h1 {
+            font-size: 19px;
+            margin-bottom: 15px;
+          }
+
+          p {
+            font-size: 12px;
+            max-width: 300px;
+          }
+        }
+
+        &__right {
+          flex-direction: column;
+          &__main {
+            margin-bottom: 10px;
+            div {
+              width: 220px;
+              height: 120px;
+            }
+          }
+
+          &__secondary {
+            display: flex;
+            flex-direction: row;
+            column-gap: 6px;
+            div {
+              width: 50px;
+              height: 43px;
+            }
+          }
+
+          &__secondary :last-child {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 645px) {
+  .promotion {
+    &__item {
+      &__block {
+        flex-direction: column;
+      }
+    }
+
+    &__feedback {
+      margin-bottom: 20px;
+    }
+
+    &__aboutus {
+      margin-top: 30px;
+      &__title {
+        font-size: 23px;
+        margin-bottom: 25px;
+      }
+    }
+
+    &__item {
+      margin-top: 30px;
+
+      &__title {
+        font-size: 23px;
+        margin-bottom: 30px;
+      }
+
+      &__block {
+        padding: 20px 30px 28px 30px;
+        margin-bottom: 30px;
+        max-width: 350px;
+        margin: 0 auto;
+        &__left {
+          max-width: 220px;
+          margin-bottom: 30px;
+          h1 {
+            font-size: 19px;
+            margin-bottom: 15px;
+            text-align: center;
+          }
+
+          p {
+            font-size: 12px;
+            max-width: 220px;
+          }
+        }
+
+        &__right {
+          flex-direction: column;
+          &__main {
+            margin-bottom: 10px;
+            div {
+              width: 220px;
+              height: 120px;
+            }
+          }
+
+          &__secondary {
+            display: flex;
+            flex-direction: row;
+            column-gap: 6px;
+            div {
+              width: 50px;
+              height: 43px;
+            }
+          }
+
+          &__secondary :last-child {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

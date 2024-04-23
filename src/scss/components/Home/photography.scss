@@ -1,24 +1,13 @@
 .photography {
   padding-top: 80px;
   color: #000;
+  z-index: 150;
 
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-  }
   &__title {
     font-family: "Playfair Display", serif;
     font-size: 45px;
     text-align: center;
     margin-bottom: 80px;
-  }
-  &__buttons {
-    display: flex;
-    column-gap: 32px;
-    justify-content: center;
-  }
-  &__button {
-    padding: 12px 25px;
   }
 
   &__card {
@@ -26,57 +15,114 @@
     margin-bottom: 90px;
     align-items: center;
     column-gap: 55px;
-    &__left {
-      display: flex;
-      column-gap: 25px;
-    }
-    &__content {
-      max-width: 1000px;
-      text-align: center;
-    }
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 45px;
-      max-width: 1200px;
-      margin-bottom: 100px;
-    }
-    p {
-      font-family: "Taylor Sans 400";
-      font-size: 22px;
-      max-width: 717px;
+    justify-content: center;
+    animation: 1.5s photography-fade;
 
-      height: 210px;
-      max-width: 890px;
-      max-height: 444px;
-      line-height: normal;
-    }
-    a {
-      font-size: 22px;
-      font-family: "Taylor Sans 400";
-      color: #000;
-      border: 1px solid #000;
-      transition: 0.3s ease-in-out;
-    }
-    a:hover {
-      background-color: #000;
-      color: #fff;
+    @keyframes photography-fade {
+      0% {
+        opacity: 0;
+        transform: translateX(-500px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0px);
+      }
     }
 
-    &__image {
-      width: 400px;
-      height: 400px;
-      background-size: cover;
-      background-position: center;
-    }
     &__images {
       display: flex;
-      flex-direction: column;
-      div {
-        width: 187px;
-        height: 187px;
-        margin-bottom: 25px;
-        background-size: cover;
+      column-gap: 25px;
+
+      &__main {
+        width: 400px;
+        height: 400px;
         background-position: center;
+        background-size: 100%;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.01);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      &__secondary {
+        display: flex;
+        flex-direction: column;
+
+        & :last-child {
+          margin-bottom: 0px;
+        }
+
+        div {
+          width: 187px;
+          height: 187px;
+          margin-bottom: 25px;
+          background-size: cover;
+          background-position: 0% 20%;
+          transition: 0.2s all ease;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.01);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+
+    &__desc {
+      max-width: 1000px;
+      text-align: center;
+
+      &__buttons {
+        display: flex;
+        column-gap: 32px;
+        justify-content: center;
+      }
+
+      &__button {
+        padding: 12px 25px;
+        background-color: #fff;
+      }
+
+      h1 {
+        display: flex;
+        font-family: "Playfair Display", serif;
+        font-size: 45px;
+        max-width: 1200px;
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: center;
+      }
+
+      a {
+        font-size: 22px;
+        font-family: "Taylor Sans 400";
+        color: #000;
+        border: 1px solid #000;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+    }
+
+    &__mobile {
+      &__title {
+        text-align: center;
+        display: none;
+        background-color: #fff;
+
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        font-family: "Playfair Display", serif;
+
+        h1 {
+          background-color: #fff;
+          font-size: 23px;
+        }
       }
     }
   }

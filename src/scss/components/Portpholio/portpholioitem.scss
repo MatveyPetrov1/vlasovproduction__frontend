@@ -1,31 +1,403 @@
-.portpholioitem {
+.portpholio_item {
   background-image: url("../../../assets/img/background.png");
   background-repeat: no-repeat;
   background-size: cover;
-  &__title {
-    font-size: 55px;
-    font-family: "Playfair Display", serif;
-    margin-bottom: 111px;
-    text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  &__white {
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
   }
+
+  &__title {
+    font-size: 45px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+  }
+
   &__block {
     display: flex;
-    column-gap: 15px;
-    margin-bottom: 120px;
+    justify-content: space-between;
+    margin-bottom: 80px;
+
     img {
       background-color: grey;
     }
-  }
-  &__block1 {
-    img {
-      width: 496px;
-      height: 746px;
+
+    &__title {
+      color: #000;
+      font-size: 40px;
+      margin-bottom: 80px;
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
     }
   }
+
+  &__block1 {
+    div {
+      width: 490px;
+      height: 716px;
+      background-size: cover;
+      background-position: center;
+      background-color: #000;
+      transition: 0.5s all ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
   &__block2 {
-    img {
-      width: 750px;
-      height: 498px;
+    div {
+      width: 493px;
+      height: 333px;
+      background-size: cover;
+      background-position: center;
+      background-color: #000;
+      transition: 0.5s all ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+@media (max-width: 1660px) {
+  .portpholio_item {
+    &__block1 {
+      div {
+        width: 450px;
+        height: 650px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 450px;
+        height: 290px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1570px) {
+  .portpholio_item {
+    padding-top: 50px;
+    &__title {
+      font-size: 37px;
+      margin-bottom: 50px;
+    }
+
+    &__block {
+      margin-bottom: 40px;
+      &__title {
+        font-size: 32px;
+        margin-bottom: 50px;
+      }
+    }
+
+    &__block1 {
+      div {
+        width: 400px;
+        height: 600px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 400px;
+        height: 240px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .portpholio_item {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    &__title {
+      font-size: 33px;
+      margin-bottom: 40px;
+    }
+
+    &__block {
+      &__title {
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__block1 {
+      div {
+        width: 350px;
+        height: 550px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 350px;
+        height: 220px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1215px) {
+  .portpholio_item {
+    &__block1 {
+      div {
+        width: 320px;
+        height: 520px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 320px;
+        height: 210px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1115px) {
+  .portpholio_item {
+    &__block1 {
+      div {
+        width: 280px;
+        height: 480px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 280px;
+        height: 190px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .portpholio_item {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &__title {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    &__block {
+      margin-bottom: 30px;
+      &__title {
+        font-size: 23px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .portpholio_item {
+    &__block1 {
+      div {
+        width: 250px;
+        height: 400px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 250px;
+        height: 170px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .portpholio_item {
+    &__block {
+      &__title {
+        font-size: 20px;
+      }
+    }
+    &__title {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+    &__block1 {
+      div {
+        width: 220px;
+        height: 360px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 220px;
+        height: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width: 815px) {
+  .portpholio_item {
+    &__block1 {
+      div {
+        width: 200px;
+        height: 330px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 200px;
+        height: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .portpholio_item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &__block {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .portpholio_item {
+    &__block1 {
+      div {
+        width: 180px;
+        height: 300px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 180px;
+        height: 140px;
+      }
+    }
+  }
+}
+
+@media (max-width: 690px) {
+  .portpholio_item {
+    &__block1 {
+      div {
+        width: 160px;
+        height: 280px;
+      }
+    }
+
+    &__block2 {
+      div {
+        width: 160px;
+        height: 120px;
+      }
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .portpholio_item {
+    &__block {
+      display: block;
+    }
+
+    &__block1 {
+      div {
+        margin: 0 auto;
+        width: 300px;
+        height: 450px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__block2 {
+      div {
+        margin: 0 auto;
+        width: 400px;
+        height: 300px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .portpholio_item {
+    &__block1 {
+      div {
+        margin: 0 auto;
+        width: 250px;
+        height: 400px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__block2 {
+      div {
+        margin: 0 auto;
+        width: 300px;
+        height: 200px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  .portpholio_item {
+    &__title {
+      font-size: 23px;
+    }
+
+    &__block {
+      &__title {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .portpholio_item {
+    &__block1 {
+      div {
+        margin: 0 auto;
+        width: 200px;
+        height: 350px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__block2 {
+      div {
+        margin: 0 auto;
+        width: 200px;
+        height: 150px;
+        margin-bottom: 20px;
+      }
     }
   }
 }

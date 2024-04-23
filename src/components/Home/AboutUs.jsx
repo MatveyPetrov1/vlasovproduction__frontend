@@ -1,17 +1,16 @@
 import React from "react";
 
-const AboutUs = () => {
+const AboutUs = ({ title, text, subtext }) => {
   return (
     <div className="aboutus">
       <div className="container">
         <div className="wrapper">
           <div className="aboutus__block">
-            <h1>О нас</h1>
+            <h1>{title}</h1>
             <p>
-              текст о том какой олег нереально крутой и что его хотят все
-              женщины мира, ставьте плюс если вы тоже теекст тееееееекст текст о
-              том какой олег нереально крутой и что его хотят все женщины мира,
-              ставьте плюс если вы тоже теекст тееееееекст
+              {text}
+              <br />
+              <span>{subtext}</span>
             </p>
           </div>
         </div>

@@ -1,14 +1,20 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Application from "../components/Application";
-import { fetchPortpholioItems } from "../redux/slices/portpholioItems";
-import Loader from "../components/Loader";
+import Application from "../components/UI/Application/index";
+import { fetchPortpholioItems } from "../redux/slices/pages/portpholioItems";
+import Loader from "../components/UI/Loader";
+import PortpholioItem from "../components/Portpholio";
+import { setCurrentPage } from "../redux/slices/components/headerSlice";
+import MainCarousel from "../components/School/MainCarousel";
 
 const PortpholioSchool = () => {
   const dispatch = useDispatch();
+  const [isOpenCarousel, setIsOpenCarousel] = React.useState();
+  const [topImageIsActive, setTopImageIsActive] = React.useState(false);
   const { items, status } = useSelector((state) => state.portpholio);
 
   useEffect(() => {
+    dispatch(setCurrentPage(1));
     dispatch(fetchPortpholioItems());
   }, []);
 
@@ -18,33 +24,37 @@ const PortpholioSchool = () => {
         <Loader />
       ) : (
         <div className="portpholioitem main__fade">
-          {/* <Header onScrollTo={onScrollTo} /> */}
-          <div className="topimage"></div>
-          <div className="container">
-            <div className="wrapper">
-              <div className="portpholioitem__title">Школьная фотография </div>
-              {items.school.map((obj, index) => {
-                return index === 0 || index % 2 === 0 ? (
-                  <div
-                    key={index}
-                    className="portpholioitem__block portpholioitem__block1"
-                  >
-                    <img src={obj.url1} alt="" />
-                    <img src={obj.url2} alt="" />
-                    <img src={obj.url3} alt="" />
-                  </div>
-                ) : (
-                  <div
-                    key={index}
-                    className="portpholioitem__block portpholioitem__block2"
-                  >
-                    <img src={obj.url1} alt="" />
-                    <img src={obj.url2} alt="" />
-                  </div>
-                );
-              })}
-            </div>
+          {/* Main carousel  */}
+
+          {isOpenCarousel && (
+            <MainCarousel
+              bigSlider={items.school.bigSlider}
+              onClickClose={() => setIsOpenCarousel(false)}
+            />
+          )}
+
+          <div className="topimage load_animation">
+            <img
+              className={
+                topImageIsActive
+                  ? "topimage__image portpholio__bg__school active"
+                  : "topimage__image portpholio__bg__school"
+              }
+              src="https://thumb.cloud.mail.ru/weblink/thumb/xw1/P8BA/arYqUBfDA/dcac2b48-4b8a-0c2f-e448-7be30afc2821"
+              alt=""
+              onLoad={() => {
+                setTopImageIsActive(true);
+              }}
+            />
           </div>
+
+          {/* Portpholio items  */}
+
+          <PortpholioItem
+            {...items.school}
+            onClickImage={() => setIsOpenCarousel(true)}
+          />
+
           <Application />
         </div>
       )}

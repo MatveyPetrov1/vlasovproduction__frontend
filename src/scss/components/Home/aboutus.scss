@@ -1,18 +1,29 @@
 .aboutus {
   color: #fff;
   background-color: #000;
+  position: relative;
+  z-index: 90;
 
   &__block {
     background-color: #000;
     padding: 24px 150px 78px 124px;
+
     h1 {
       font-size: 60px;
       font-family: "Playfair Display", serif;
       margin-bottom: 45px;
     }
+
     p {
       font-family: "Taylor Sans 400";
       font-size: 23px;
+    }
+
+    span {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
     }
   }
 }

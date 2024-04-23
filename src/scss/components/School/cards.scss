@@ -1,0 +1,261 @@
+.school__card {
+  display: flex;
+  justify-content: space-between;
+
+  &__carousel {
+    transition: 0.5s transform ease;
+    width: 100%;
+    display: none;
+
+    &.active {
+      display: flex;
+      animation: 1s load;
+
+      @keyframes load {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__container {
+      width: 502px;
+      margin-top: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    &_item {
+      width: 502px;
+      height: 401px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__left {
+    &__title {
+      max-width: 430px;
+      text-align: center;
+      margin: 0 auto;
+
+      animation: 1.5s title-active;
+
+      @keyframes title-active {
+        0% {
+          transform: translateX(-300px);
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+
+      &__main {
+        font-size: 40px;
+        font-family: "Playfair Display", serif;
+        margin-top: 250px;
+      }
+
+      &__price {
+        font-family: "Taylor Sans 400";
+        font-size: 29px;
+        margin-bottom: 245px;
+      }
+    }
+
+    &__desc {
+      max-width: 437px;
+
+      &__mobile {
+        display: none;
+      }
+
+      &__items {
+        margin-bottom: 20px;
+      }
+
+      &__item {
+        font-size: 23px;
+        font-family: "Taylor Sans 400";
+        list-style-type: disc;
+      }
+
+      &__subdesc {
+        font-size: 23px;
+        font-family: "Taylor Sans 600";
+        max-width: 450px;
+      }
+    }
+  }
+  &__right {
+    &__content {
+      display: flex;
+      column-gap: 32px;
+      position: relative;
+
+      &__left {
+        margin-bottom: 90px;
+        position: relative;
+
+        &__colors {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          left: -60px;
+          bottom: -15px;
+
+          svg {
+            margin-bottom: 15px;
+            width: 45px;
+            height: 45px;
+            transition: 0.5s all ease;
+            cursor: pointer;
+
+            &.active {
+              transform: scale(1.1);
+            }
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+
+      &__main {
+        img {
+          width: 502px;
+          height: 401px;
+          background-color: grey;
+        }
+      }
+
+      &__secondary {
+        display: flex;
+        flex-direction: column;
+        margin-top: 91px;
+
+        &__container {
+          width: 75px;
+          height: 65px;
+          margin-bottom: 19px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          background-color: #fff;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+          video,
+          img {
+            width: 100%;
+            display: none;
+            animation: 1s img-load;
+
+            @keyframes img-load {
+              0% {
+                opacity: 0;
+              }
+              100% {
+                opacity: 1;
+              }
+            }
+
+            &.loaded {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+
+    &__about {
+      &__subdesc {
+        font-family: "Taylor Sans 400";
+        font-size: 23px;
+        color: #fff;
+        text-align: end;
+        margin-top: 20px;
+
+        p {
+          background-color: #000;
+          display: inline-flex;
+        }
+      }
+
+      &__item {
+        font-size: 23px;
+        font-family: "Taylor Sans 400";
+        max-width: 600px;
+
+        &__black {
+          color: #fff;
+
+          span {
+            background-color: #000;
+          }
+
+          p {
+            background-color: black;
+            display: inline;
+          }
+        }
+
+        p {
+          display: inline;
+        }
+
+        span {
+          font-size: 23px;
+          font-family: "Taylor Sans 600";
+        }
+      }
+    }
+  }
+}
+.school__card2 {
+  &__hit {
+    position: absolute;
+    width: 75px;
+    height: 35px;
+    background-color: #03d218;
+    border-radius: 46px;
+    transform: rotate(-33deg);
+    top: 75px;
+    left: -30px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 27px;
+    font-family: "Taylor Sans 400";
+  }
+
+  &__colors {
+    left: 620px;
+  }
+
+  &__right {
+    &__title {
+      &__mobile {
+        display: none;
+      }
+    }
+  }
+}
