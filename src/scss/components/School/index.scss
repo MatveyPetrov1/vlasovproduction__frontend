@@ -1,0 +1,1052 @@
+@import url("./cards.scss");
+@import url("./carousel.scss");
+
+.school {
+  &__background {
+    background-image: url("../../../assets/img/background.png");
+    background-repeat: repeat;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 90px;
+  }
+
+  &__fullwidth {
+    width: 100%;
+  }
+
+  &__white_bg {
+    background-color: #fff;
+    position: relative;
+  }
+
+  &__business_card {
+    background-color: #fff;
+    padding: 40px 100px;
+    max-width: 90%;
+    margin: 0 auto;
+    border: 1px solid #000;
+    // margin-bottom: 90px;
+    margin-top: 90px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    a {
+      padding: 15px 30px;
+      font-size: 23px;
+      border: 1px solid #000;
+      color: #000;
+      background-color: #fff;
+      font-family: "Taylor Sans 400";
+      display: inline-block;
+      transition: 0.5s ease;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+
+    &__text {
+      font-size: 25px;
+      margin-bottom: 40px;
+      font-family: "Taylor Sans 600";
+      text-align: center;
+      margin: 0px auto 20px;
+    }
+  }
+
+  &__wrapper {
+    padding: 0 60px;
+  }
+
+  &__feedback_title {
+    font-size: 45px;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 80px;
+  }
+}
+
+@keyframes close-icon-hover {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes school-main_slider {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1570px) {
+  .school {
+    &__business_card {
+      padding: 30px 120px;
+      margin-top: 80px;
+    }
+    &__carousel {
+      &__right_block:hover {
+        svg {
+          width: 55px;
+          height: 55px;
+        }
+      }
+
+      &__close_icon {
+        width: 43px;
+        top: 4%;
+        right: 4%;
+      }
+
+      &__left_block:hover {
+        svg {
+          width: 55px;
+          height: 55px;
+        }
+      }
+
+      &__arrow {
+        width: 55px;
+        height: 55px;
+      }
+
+      &__close {
+        svg {
+          width: 40px;
+          top: 3%;
+        }
+      }
+
+      &__count {
+        font-size: 35px;
+      }
+    }
+
+    &__button {
+      a {
+        padding: 10px 25px;
+        font-size: 21px;
+      }
+
+      &__text {
+        font-size: 23px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__feedback_title {
+      font-size: 35px;
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    &__card {
+      margin-bottom: 60px;
+
+      &__carousel {
+        &__container {
+          width: 400px;
+          margin-top: 60px;
+        }
+
+        &_item {
+          width: 400px;
+          height: 350px;
+        }
+      }
+
+      &__left {
+        &__desc {
+          &__item {
+            font-size: 19px;
+          }
+
+          &__subdesc {
+            font-size: 19px;
+            max-width: 300px;
+          }
+        }
+
+        &__title {
+          &__main {
+            font-size: 35px;
+            margin-top: 205px;
+          }
+
+          &__price {
+            font-size: 25px;
+            margin-bottom: 220px;
+          }
+        }
+      }
+
+      &__right {
+        &__content {
+          column-gap: 13px;
+
+          &__left {
+            &__colors {
+              bottom: -9px;
+              left: -50px;
+
+              svg {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+
+          &__secondary {
+            margin-top: 60px;
+
+            &__container {
+              width: 70px;
+              height: 60px;
+              margin-bottom: 13px;
+            }
+          }
+        }
+
+        &__about {
+          &__item {
+            font-size: 19px;
+            max-width: 500px;
+
+            span {
+              font-size: 20px;
+            }
+          }
+
+          &__subdesc {
+            font-size: 19px;
+          }
+        }
+      }
+    }
+
+    &__card2 {
+      &__hit {
+        top: 45px;
+        font-size: 24px;
+        width: 65px;
+        height: 32px;
+        left: -30px;
+      }
+
+      &__colors {
+        left: 495px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .school {
+    &__background {
+      padding-bottom: 50px;
+    }
+    &__carousel {
+      &__count {
+        font-size: 25px;
+      }
+
+      &__right_block:hover {
+        svg {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      &__left_block:hover {
+        svg {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      &__arrow {
+        width: 50px;
+        height: 50px;
+      }
+
+      &__close {
+        svg {
+          width: 40px;
+          top: 3%;
+        }
+      }
+    }
+
+    &__wrapper {
+      padding: 0 30px;
+    }
+
+    &__business_card {
+      padding: 30px 100px;
+    }
+
+    &__button {
+      a {
+        padding: 8px 20px;
+        font-size: 19px;
+      }
+
+      &__text {
+        font-size: 19px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__feedback_title {
+      font-size: 30px;
+      margin-top: 50px;
+      margin-bottom: 0px;
+    }
+
+    &__card {
+      margin-bottom: 30px;
+
+      &__carousel {
+        &__container {
+          width: 350px;
+        }
+
+        &_item {
+          width: 350px;
+          height: 270px;
+        }
+      }
+
+      &__left {
+        &__desc {
+          &__item {
+            font-size: 16px;
+          }
+
+          &__subdesc {
+            font-size: 16px;
+            max-width: 300px;
+          }
+        }
+
+        &__title {
+          &__main {
+            font-size: 30px;
+            margin-top: 170px;
+          }
+
+          &__price {
+            font-size: 20px;
+            margin-bottom: 158px;
+          }
+        }
+      }
+
+      &__right {
+        &__content {
+          margin-bottom: 47px;
+          column-gap: 6px;
+
+          &__left {
+            margin: 0;
+            &__colors {
+              bottom: 0px;
+              svg {
+                width: 35px;
+                height: 35px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+
+          &__secondary {
+            margin-top: 61px;
+
+            &__container {
+              margin-bottom: 10px;
+            }
+
+            &__container {
+              &:last-child {
+                display: none;
+              }
+            }
+          }
+        }
+
+        &__about {
+          &__item {
+            font-size: 16px;
+            max-width: 400px;
+
+            span {
+              font-size: 16px;
+            }
+          }
+
+          &__subdesc {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    &__card2 {
+      &__hit {
+        font-size: 20px;
+        width: 50px;
+        height: 25px;
+        left: -23px;
+        top: 50px;
+      }
+
+      &__colors {
+        left: 440px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .school {
+    &__wrapper {
+      padding: 0;
+    }
+
+    &__business_card {
+      padding: 20px 80px;
+      margin-top: 50px;
+    }
+
+    &__button {
+      a {
+        padding: 8px 20px;
+        font-size: 16px;
+      }
+
+      &__text {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__feedback_title {
+      font-size: 25px;
+      margin-top: 50px;
+      margin-bottom: 0px;
+    }
+
+    &__card {
+      &__carousel {
+        &__container {
+          width: 300px;
+          margin-top: 50px;
+        }
+
+        &_item {
+          width: 300px;
+          height: 250px;
+        }
+      }
+
+      &__left {
+        &__desc {
+          &__item {
+            font-size: 13px;
+          }
+
+          &__subdesc {
+            font-size: 13px;
+            max-width: 250px;
+          }
+        }
+
+        &__title {
+          &__main {
+            font-size: 25px;
+            margin-top: 145px;
+          }
+
+          &__price {
+            font-size: 15px;
+            margin-bottom: 155px;
+          }
+        }
+      }
+
+      &__right {
+        &__content {
+          column-gap: 6px;
+          justify-content: center;
+          margin-bottom: 0px;
+
+          &__left {
+            margin-bottom: 50px;
+            &__colors {
+              bottom: -5px;
+              left: -40px;
+              svg {
+                width: 30px;
+                height: 30px;
+                margin-bottom: 5px;
+              }
+            }
+          }
+
+          &__secondary {
+            margin-top: 50px;
+
+            &__container {
+              width: 68px;
+              height: 58px;
+              margin-bottom: 6px;
+            }
+          }
+        }
+
+        &__about {
+          &__item {
+            font-size: 13px;
+            max-width: 370px;
+
+            span {
+              font-size: 13px;
+            }
+          }
+
+          &__subdesc {
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+
+    &__card2 {
+      &__hit {
+        font-size: 18px;
+        width: 47px;
+        height: 22px;
+        left: -20px;
+        top: 40px;
+      }
+      &__colors {
+        left: 385px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .school {
+    &__business_card {
+      margin-top: 60px;
+      padding: 20px 45px;
+    }
+
+    &__background {
+      padding-bottom: 25px;
+    }
+
+    &__carousel {
+      &__blocks {
+        width: 80vw;
+      }
+
+      &__close_icon {
+        display: none;
+      }
+
+      &__arrow {
+        opacity: 1;
+      }
+
+      &__count {
+        top: 80%;
+      }
+    }
+
+    &__card {
+      flex-direction: column;
+      margin-bottom: 0px;
+
+      &__carousel {
+        .carousel-control-next {
+          width: 17%;
+          justify-content: flex-start;
+        }
+
+        .carousel-control-prev {
+          width: 17%;
+          justify-content: flex-end;
+        }
+
+        .carousel-control-next-icon {
+          width: 30px;
+          height: 30px;
+        }
+
+        .carousel-control-prev-icon {
+          width: 30px;
+          height: 30px;
+        }
+
+        &__container {
+          width: 400px;
+          margin: 0;
+        }
+
+        &_item {
+          width: 400px;
+          height: 322px;
+        }
+      }
+
+      &__left {
+        display: flex;
+        justify-content: center;
+        &__title {
+          margin: 0 auto;
+          &__main {
+            margin-top: 30px;
+            font-size: 30px;
+          }
+
+          &__price {
+            margin-bottom: 30px;
+            font-size: 20px;
+          }
+        }
+
+        &__desc {
+          display: none;
+
+          &__mobile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 60vw;
+
+            margin: 50px auto 0;
+          }
+
+          &__subdesc {
+            font-size: 16px;
+            margin-bottom: 30px;
+            max-width: 400px;
+          }
+
+          &__item {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &__right {
+        &__about {
+          margin-top: 0px;
+          max-width: 60vw;
+          margin: 0 auto;
+
+          &__item {
+            font-size: 16px;
+
+            span {
+              font-size: 16px;
+            }
+          }
+
+          &__subdesc {
+            p {
+              font-size: 16px;
+            }
+          }
+        }
+
+        &__content {
+          column-gap: 10px;
+
+          &__left {
+            margin-bottom: 0px;
+            &__colors {
+              bottom: -40px;
+              flex-direction: row;
+              left: 0;
+              column-gap: 10px;
+
+              svg {
+                width: 35px;
+                height: 35px;
+              }
+            }
+          }
+
+          &__secondary {
+            margin-top: 0px;
+            &__container {
+              width: 77px;
+              height: 67px;
+              margin-bottom: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    &__card2 {
+      &__hit {
+        top: -10px;
+        font-size: 18px;
+        width: 50px;
+        height: 25px;
+      }
+
+      &__right {
+        &__title {
+          display: none;
+
+          &__mobile {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .school {
+    &__business_card {
+      margin-top: 30px;
+      padding: 20px 30px;
+      margin-bottom: 30px;
+    }
+
+    &__background {
+      padding: 0;
+    }
+
+    &__feedback {
+      &_title {
+        margin-top: 30px;
+      }
+    }
+
+    &__button {
+      a {
+        font-size: 14px;
+        padding: 6px 15px;
+      }
+      &__text {
+        font-size: 14px;
+        max-width: 440px;
+      }
+    }
+
+    &__card {
+      flex-direction: column;
+      margin-bottom: 0px;
+
+      &__carousel {
+        &__container {
+          width: 300px;
+        }
+
+        &_item {
+          width: 300px;
+          height: 250px;
+        }
+      }
+
+      &__left {
+        display: flex;
+        justify-content: center;
+        &__title {
+          &__main {
+            margin-top: 35px;
+            font-size: 25px;
+          }
+
+          &__price {
+            margin-bottom: 30px;
+            font-size: 20px;
+          }
+        }
+
+        &__desc {
+          display: none;
+
+          &__mobile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 60vw;
+            margin: 60px auto 0;
+          }
+
+          &__subdesc {
+            font-size: 14px;
+            margin-bottom: 30px;
+            max-width: 400px;
+          }
+
+          &__item {
+            font-size: 14px;
+          }
+        }
+      }
+
+      &__right {
+        &__about {
+          margin-top: 0px;
+          max-width: 60vw;
+          margin: 0 auto;
+
+          &__item {
+            font-size: 14px;
+
+            span {
+              font-size: 14px;
+            }
+          }
+
+          &__subdesc {
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &__content {
+          column-gap: 10px;
+          margin-bottom: 0px;
+
+          &__left {
+            &__colors {
+              bottom: -50px;
+              flex-direction: row;
+              left: 0;
+              column-gap: 10px;
+
+              svg {
+                width: 30px;
+                height: 30px;
+              }
+            }
+          }
+
+          &__secondary {
+            margin-top: 0px;
+
+            &__container {
+              width: 85px;
+              height: 71px;
+              margin-bottom: 19px;
+
+              &__first {
+                display: none;
+              }
+
+              &:first-child {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .school {
+    &__business_card {
+      padding: 20px 10px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .school {
+    &__carousel {
+      &__left_block {
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      &__right_block {
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      &__blocks {
+        height: 50%;
+      }
+    }
+    &__feedback {
+      &_title {
+        margin-top: 30px;
+      }
+    }
+
+    &__button {
+      a {
+        font-size: 12px;
+        padding: 6px 15px;
+      }
+      &__text {
+        font-size: 12px;
+        max-width: 440px;
+      }
+    }
+
+    &__card {
+      flex-direction: column;
+      margin-bottom: 0px;
+
+      &__carousel {
+        &__container {
+          width: 250px;
+        }
+
+        &_item {
+          width: 250px;
+          height: 200px;
+        }
+      }
+
+      &__left {
+        display: flex;
+        justify-content: center;
+        &__title {
+          &__main {
+            margin-top: 30px;
+            font-size: 20px;
+          }
+
+          &__price {
+            margin-bottom: 30px;
+            font-size: 15px;
+          }
+        }
+
+        &__desc {
+          display: none;
+
+          &__mobile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 60vw;
+            margin: 40px auto 0;
+          }
+
+          &__subdesc {
+            font-size: 12px;
+            margin-bottom: 20px;
+            max-width: 400px;
+          }
+
+          &__item {
+            font-size: 12px;
+          }
+
+          &__items {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      &__right {
+        &__about {
+          margin-top: 0px;
+          max-width: 70vw;
+          margin: 0 auto;
+
+          &__item {
+            font-size: 12px;
+
+            span {
+              font-size: 12px;
+            }
+          }
+
+          &__subdesc {
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+
+        &__content {
+          column-gap: 10px;
+
+          &__left {
+            &__colors {
+              bottom: -25px;
+              flex-direction: row;
+              left: 0;
+              column-gap: 12px;
+
+              svg {
+                width: 25px;
+                height: 25px;
+              }
+            }
+          }
+
+          &__secondary {
+            margin-top: 0px;
+
+            &__container {
+              width: 60px;
+              height: 50px;
+              margin-bottom: 25px;
+            }
+
+            // img {
+            //   width: 60px;
+            //   height: 50px;
+            //   margin-bottom: 25px;
+            // }
+          }
+        }
+      }
+    }
+
+    &__card2 {
+      &__hit {
+        font-size: 16px;
+        width: 40px;
+        height: 20px;
+        left: -20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .school {
+    &__button {
+      &__text {
+        max-width: 330px;
+      }
+    }
+  }
+}

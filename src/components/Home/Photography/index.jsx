@@ -1,21 +1,21 @@
-import React, { useRef } from "react";
+import React from "react";
 import PhotographyCard from "./PhotographyCard";
 
-const Photography = ({ photographyCards }) => {
-  const photoRef = useRef();
-
+const Photography = ({ photographyCards, isMobile }) => {
   return (
-    <div className="photography" ref={photoRef}>
-      <div className="container">
-        <div className="wrapper">
-          <div className="photography__wrapper">
+    <div className="photography">
+      {photographyCards && (
+        <div className="container">
+          <div className="wrapper">
             <div className="photography__title">Фотосъемка</div>
             {photographyCards.map((obj, index) => {
-              return <PhotographyCard key={index} {...obj} />;
+              return (
+                <PhotographyCard key={index} {...obj} isMobile={isMobile} />
+              );
             })}
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

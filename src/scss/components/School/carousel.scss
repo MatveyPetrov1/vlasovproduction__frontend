@@ -1,0 +1,151 @@
+.school__carousel {
+  display: flex;
+  column-gap: 100px;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+
+  &__close {
+    position: absolute;
+    width: 100vw;
+    height: 100lvh;
+    z-index: 800;
+  }
+
+  &__background {
+    width: 100vw;
+    height: 100lvh;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 900;
+
+    @keyframes main_carousel-not-active {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes main_carousel-active {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__count {
+    position: absolute;
+    color: #000;
+    font-size: 40px;
+    top: 90%;
+    z-index: 1100;
+    font-family: "Taylor Sans 400";
+    background-color: #fff;
+    padding: 5px 10px;
+  }
+
+  &__blocks {
+    position: absolute;
+    width: 60vw;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    user-select: none;
+  }
+
+  &__left_block {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__left_block:hover {
+    svg {
+      width: 65px;
+      height: 65px;
+      opacity: 1;
+    }
+  }
+
+  &__right_block {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__right_block:hover {
+    svg {
+      width: 65px;
+      height: 65px;
+      opacity: 1;
+    }
+  }
+
+  &__arrow {
+    cursor: pointer;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__close_icon {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+    animation: 1s school-main_slider;
+    z-index: 1000;
+
+    &:hover {
+      fill: rgb(168, 61, 61);
+      animation: close-icon-hover 1s;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 1200px;
+    max-height: 400px;
+
+    &__item {
+      max-width: 80vw;
+      max-height: 90vh;
+      display: none;
+
+      &.active {
+        display: flex;
+        animation: 0.5s photo-active;
+      }
+    }
+  }
+}
+
+@keyframes photo-active {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

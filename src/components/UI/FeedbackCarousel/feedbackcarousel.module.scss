@@ -1,0 +1,167 @@
+.feedback__carousel {
+  margin: 0 auto;
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+  }
+
+  &__card {
+    background: #000;
+    width: 540px;
+    min-height: 310px;
+    padding: 30px 31px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    color: #fff;
+
+    h1 {
+      font-size: 37px;
+      margin-bottom: 20px;
+    }
+
+    &__deal {
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    &__text {
+      font-size: 23px;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 1570px) {
+  .feedback__carousel {
+    &__card {
+      width: 465px;
+      min-height: 260px;
+
+      h1 {
+        font-size: 34px;
+      }
+
+      &__text {
+        font-size: 19px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .feedback__carousel {
+    max-width: 1000px;
+
+    &__card {
+      width: 360px;
+      min-height: 250px;
+
+      h1 {
+        font-size: 27px;
+      }
+
+      &__text {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .feedback__carousel {
+    max-width: 900px;
+
+    &__card {
+      width: 320px;
+      min-height: 200px;
+      padding: 20px 21px;
+
+      h1 {
+        font-size: 21px;
+      }
+
+      &__text {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .feedback__carousel {
+    &__card {
+      width: 290px;
+      min-height: 190px;
+      padding: 20px 21px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback__carousel {
+    &__card {
+      width: 250px;
+      min-height: 200px;
+      padding: 20px 21px;
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .feedback__carousel {
+    &__card {
+      width: 230px;
+      min-height: 200px;
+      padding: 20px 21px;
+
+      h1 {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      &__text {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .feedback__carousel {
+    &__items {
+      column-gap: 15px;
+    }
+
+    &__card {
+      width: 200px;
+      min-height: 200px;
+
+      h1 {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      &__text {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .feedback__carousel {
+    &__card {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .feedback__carousel {
+    &__card {
+      width: 250px;
+    }
+  }
+}

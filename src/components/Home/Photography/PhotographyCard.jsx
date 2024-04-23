@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setCurrentPage } from "../../../redux/slices/headerSlice";
+import { setCurrentPage } from "../../../redux/slices/components/headerSlice";
 import {
   setCurrentImage,
   setIsOpen,
-} from "../../../redux/slices/fullscreenHomeSlice";
+} from "../../../redux/slices/components/fullscreenSlice";
 
 const PhotographyCard = ({
   mainImageUrl,
@@ -13,18 +12,18 @@ const PhotographyCard = ({
   url1,
   url2,
   title,
+  isMobile,
 }) => {
   const dispatch = useDispatch();
+
+  const [isLoaded, setIsLoaded] = React.useState();
+
   const onClickButton = (page) => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
     if (page === 1) {
       dispatch(setCurrentPage(1));
+    } else {
+      dispatch(setCurrentPage(2));
     }
-
-    dispatch(setCurrentPage(2));
   };
 
   const onClickPhotography = (url) => {
@@ -33,48 +32,59 @@ const PhotographyCard = ({
   };
 
   return (
-    <div className="photography__card">
-      <div className="photography__card__left">
+    <div
+      className={isMobile ? "photography__card" : "photography__card wow"}
+      style={isMobile ? { animation: "none" } : {}}
+    >
+      {/* Photography left */}
+
+      <div className="photography__card__images">
+        {/* Mobile title */}
+
+        <div className="photography__card__mobile__title">
+          <h1>{title}</h1>
+        </div>
+
         <div
+          className="photography__card__images__main"
+          onClick={() => onClickPhotography(mainImageUrl)}
           style={{
             backgroundImage: `url("${mainImageUrl}")`,
           }}
-          className="photography__card__image"
-          onClick={() => onClickPhotography(mainImageUrl)}
         ></div>
 
-        <div className="photography__card__images">
+        <div className="photography__card__images__secondary">
           {secondaryImagesUrl.map((url, index) => {
             return (
               <div
                 key={index}
-                style={{
-                  backgroundImage: `url("${url}")`,
-                }}
+                style={{ backgroundImage: `url("${url}")` }}
                 onClick={() => onClickPhotography(url)}
               ></div>
             );
           })}
         </div>
       </div>
-      <div className="photography__card__content">
-        <div className="photography__card__images"></div>
+
+      {/* Photography left */}
+
+      <div className="photography__card__desc">
         <h1>{title}</h1>
-        <div className="photography__buttons">
-          <Link
-            className="button photography__button"
-            to={url1}
+        <div className="photography__card__desc__buttons">
+          <a
+            className="button photography__card__desc__button"
+            href={url1}
             onClick={() => onClickButton(1)}
           >
             Портфолио
-          </Link>
-          <Link
-            className="button photography__button"
-            to={url2}
+          </a>
+          <a
+            className="button photography__card__desc__button"
+            href={url2}
             onClick={() => onClickButton(2)}
           >
             Хочу съемку
-          </Link>
+          </a>
         </div>
       </div>
     </div>

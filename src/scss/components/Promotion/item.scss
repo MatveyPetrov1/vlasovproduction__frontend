@@ -1,0 +1,83 @@
+.promotion__item {
+  margin-top: 70px;
+
+  &__title {
+    font-size: 42px;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 70px;
+    text-align: center;
+  }
+
+  &__block {
+    padding: 75px 94px 58px 94px;
+    transition: 0.5s all ease-in-out;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #000;
+    margin-bottom: 50px;
+    animation: 1.5s videography-fade;
+
+    &:hover {
+      box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    &__right {
+      display: flex;
+      column-gap: 15px;
+
+      &__image {
+        background-size: cover;
+        background-position: 0% 70%;
+      }
+
+      &__main {
+        div {
+          width: 400px;
+          height: 300px;
+          transition: 0.5s all ease;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
+      }
+
+      &__secondary {
+        display: flex;
+        flex-direction: column;
+
+        div {
+          margin-bottom: 16px;
+          width: 71px;
+          height: 63px;
+          background-color: grey;
+          transition: 0.5s all ease;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    &__left {
+      max-width: 50%;
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 37px;
+        margin-bottom: 36px;
+        cursor: default;
+      }
+
+      p {
+        font-size: 23px;
+        font-family: "Taylor Sans 400";
+        max-width: 600px;
+        cursor: default;
+      }
+    }
+  }
+}

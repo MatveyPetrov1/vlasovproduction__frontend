@@ -1,12 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import home from "./slices/homeItems";
-import portpholio from "./slices/portpholioItems";
-import promotion from "./slices/promotionItems";
-import school from "./slices/schoolItems";
-import application from "./slices/applicationSlice";
-import offset from "./slices/offsetSlice";
-import header from "./slices/headerSlice";
-import homeFullscreen from "./slices/fullscreenHomeSlice";
+import home from "./slices/pages/homeItems";
+import portpholio from "./slices/pages/portpholioItems";
+import promotion from "./slices/pages/promotionItems";
+import school from "./slices/pages/schoolItems";
+import application from "./slices/components/applicationSlice";
+import feedbackTop from "./slices/components/feedbackTop";
+import header from "./slices/components/headerSlice";
+import fullscreen from "./slices/components/fullscreenSlice";
+import bigSlider from "./slices/components/bigSliderSlice";
 
 export const store = configureStore({
   reducer: {
@@ -15,8 +16,9 @@ export const store = configureStore({
     promotion,
     school,
     application,
-    offset,
+    feedbackTop,
     header,
-    homeFullscreen,
+    fullscreen,
+    bigSlider,
   },
 });

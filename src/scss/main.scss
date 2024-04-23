@@ -112,38 +112,104 @@ a {
   max-width: 1450px;
   margin: 0 auto;
   padding: 0 30px;
+  position: relative;
 }
 
 .wrapper {
   padding: 0 70px;
 }
 
+.home {
+  background-color: #fff;
+}
+
+.active_page {
+  // visibility: visible;
+  animation: 1.5s fade-in;
+}
+
+.hidden_page {
+  visibility: hidden;
+}
+
+.active_loader {
+  visibility: visible;
+}
+
+.hidden_loader {
+  visibility: hidden;
+}
+
 .button {
   display: inline-block;
-  color: #fff;
   cursor: pointer;
 }
 
-.fullscreen__wrapper {
-  min-height: 100vh;
-  position: relative;
+.carousel-indicators {
+  button {
+    display: none;
+  }
 }
 
 .homepage__bg {
   background-image: url("../assets/img/background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  z-index: 90;
+  background-color: #fff;
 }
 
 .topimage {
   width: 100%;
-  height: 476px;
-  background-color: grey;
-  // margin-bottom: 90px;
+  height: 670px;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    width: 100%;
+    position: fixed;
+    opacity: 0;
+    transition: 1s opacity;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &.portpholio__bg {
+      &__school {
+        margin-bottom: 110px;
+      }
+
+      &__promotion {
+        margin-bottom: 110px;
+      }
+    }
+
+    &.school__bg {
+      margin-bottom: -170px;
+    }
+
+    &.promotion__bg {
+      margin-bottom: 120px;
+    }
+  }
+}
+
+.load_animation {
+  animation: 3s container-load infinite;
 }
 
 .main__fade {
-  animation: fade-in 0.7s;
+  animation: fade-in 1.5s;
+}
+
+.top_image__fade {
+  animation: fade-in 2s;
 }
 
 @keyframes fade-in {
@@ -155,169 +221,880 @@ a {
   }
 }
 
-@media (max-width: 1600px) {
-  .header {
-    font-size: 21px;
-    padding: 25px;
-    &__left {
-      ul {
-        column-gap: 90px;
-      }
-    }
-    &__right {
-      ul {
-        column-gap: 90px;
-      }
-    }
+@media (max-width: 1570px) {
+  .container {
+    max-width: 1200px;
   }
-  .promo {
-    img {
-      width: 400px;
-    }
-  }
-  .aboutus {
-    &__block {
-      padding: 44px 243px 98px 134px;
-      h1 {
-        font-size: 60px;
-      }
-      p {
-        font-size: 24px;
-      }
-    }
-  }
-  .photography {
-    &__title {
-      font-size: 44px;
-    }
-    &__cards {
-      margin-bottom: 0px;
-    }
-    &__card {
-      margin-bottom: 80px;
 
-      h1 {
-        margin-bottom: 35px;
-        font-size: 35px;
-      }
-      p {
-        font-size: 25px;
-        max-width: 750px;
-        margin-bottom: 75px;
-      }
-      a {
-        font-size: 25px;
-      }
-      &__images {
-        margin-bottom: 67px;
-        img {
-          width: 250px;
-          height: 140px;
+  .topimage {
+    height: 500px;
+
+    &__image {
+      &.portpholio__bg {
+        &__promotion {
+          margin-bottom: 50px;
         }
       }
-      &__image {
-        width: 550px;
-        height: 700px;
+
+      &.promotion__bg {
+        margin-bottom: 80px;
       }
     }
   }
-  .videography {
+
+  .wrapper {
+    padding: 0 50px;
+  }
+
+  .aboutus {
+    &__block {
+      padding: 10px 70px 40px 70px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .photography {
+    padding-top: 70px;
     &__title {
-      font-size: 44px;
-      margin-bottom: 80px;
+      font-size: 37px;
+      margin-bottom: 70px;
     }
-    &__content {
-      padding: 51px 260px;
-      h1 {
-        font-size: 30px;
+
+    &__card {
+      column-gap: 45px;
+      margin-bottom: 70px;
+
+      &__desc {
+        h1 {
+          font-size: 30px;
+          margin-bottom: 50px;
+        }
+
+        &__button {
+          padding: 10px 20px;
+        }
+
+        a {
+          font-size: 20px;
+        }
+      }
+
+      &__images {
+        column-gap: 20px;
+
+        &__main {
+          width: 350px;
+          height: 350px;
+        }
+
+        &__secondary {
+          div {
+            width: 165px;
+            height: 165px;
+            margin-bottom: 20px;
+          }
+        }
       }
     }
-    a {
-      padding: 12px 50px;
-      font-size: 27px;
+  }
+
+  .videography {
+    margin-bottom: 70px;
+
+    &__block {
+      padding: 31px 70px;
+      max-width: 100%;
+
+      &__button {
+        font-size: 23px;
+        padding: 10px 40px;
+      }
+
+      &__title {
+        font-size: 23px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__title {
+      font-size: 37px;
+      margin-bottom: 50px;
     }
   }
+
   .backstage {
     &__title {
-      font-size: 44px;
+      font-size: 37px;
     }
   }
-  .carousel {
-    max-width: 1600px;
-    &__items {
-      column-gap: 40px;
-      &__content {
-        width: 400px;
-        height: 280px;
-      }
+}
+
+@media (max-width: 1350px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .wrapper {
+    padding: 0 30px;
+  }
+
+  .aboutus {
+    h1 {
+      font-size: 43px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 16px;
     }
   }
-  .feedback {
-    &__videos {
-      video {
-        width: 430px;
-        height: 270px;
-      }
-    }
+
+  .photography {
+    padding-top: 50px;
+
     &__title {
-      h1 {
-        font-size: 44px;
-      }
+      font-size: 33px;
+      margin-bottom: 50px;
     }
+
     &__card {
-      max-width: 600px;
+      column-gap: 55px;
+      margin-bottom: 50px;
+
+      &__desc {
+        h1 {
+          font-size: 27px;
+          margin-bottom: 50px;
+        }
+
+        a {
+          font-size: 16px;
+        }
+
+        &__button {
+          padding: 10px 20px;
+        }
+      }
+
+      &__images {
+        column-gap: 10px;
+
+        &__main {
+          width: 300px;
+          height: 300px;
+        }
+
+        &__secondary {
+          div {
+            width: 145px;
+            height: 145px;
+            margin-bottom: 10px;
+          }
+        }
+      }
     }
   }
-  .application {
-    &__name {
-      &_error {
-        left: 62%;
+
+  .videography {
+    margin-bottom: 60px;
+
+    &__block {
+      padding: 31px 0px;
+
+      &__button {
+        font-size: 20px;
+      }
+
+      &__title {
+        font-size: 20px;
+        margin-bottom: 30px;
       }
     }
-    &__phone {
-      &_error {
-        left: 56%;
+
+    &__title {
+      font-size: 33px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .backstage {
+    &__title {
+      font-size: 35px;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .topimage {
+    height: 400px;
+
+    &__image {
+      &.school__bg {
+        margin-bottom: -120px;
+      }
+
+      &.portpholio__bg {
+        &__school {
+          margin-bottom: 60px;
+        }
+
+        &__promotion {
+          margin-bottom: 50px;
+        }
+      }
+
+      &.promotion__bg {
+        margin-bottom: 50px;
       }
     }
-    &__text {
-      &_error {
-        left: 55%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .aboutus {
+    &__block {
+      padding: 10px 60px 30px 60px;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .photography {
+    padding-top: 40px;
+
+    &__title {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    &__card {
+      column-gap: 30px;
+      margin-bottom: 40px;
+
+      &__desc {
+        h1 {
+          font-size: 23px;
+          margin-bottom: 50px;
+        }
+
+        a {
+          font-size: 14px;
+        }
+
+        &__button {
+          padding: 10px 15px;
+        }
+      }
+
+      &__images {
+        column-gap: 5px;
+
+        &__main {
+          width: 250px;
+          height: 250px;
+        }
+
+        &__secondary {
+          div {
+            width: 123px;
+            height: 123px;
+            margin-bottom: 4px;
+          }
+        }
       }
     }
-    img {
-      width: 29px;
-      height: 29px;
-    }
-    &__wrapper {
-      padding: 86px 90px 86px 111px;
-    }
-    &__left {
-      &__success {
-        font-size: 17px;
+  }
+
+  .topimage {
+    &__image {
+      &.portpholio__bg {
+        &__school {
+          width: 125%;
+        }
+        &__promotion {
+          width: 125%;
+        }
       }
-      h1 {
-        font-size: 40px;
-      }
-      a {
-        padding: 8px 30px;
-      }
-    }
-    &__right {
-      h1 {
-        font-size: 30px;
+
+      &.promotion__bg {
+        width: 125%;
       }
     }
-    &__telegram {
-      column-gap: 21px;
+  }
+
+  .videography {
+    margin-bottom: 40px;
+
+    &__block {
+      padding: 25px 0px;
+
+      &__button {
+        font-size: 16px;
+        padding: 8px 25px;
+      }
+
+      &__title {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__title {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .backstage {
+    margin-bottom: 40px;
+    &__title {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 940px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+}
+
+// @media (max-width: 820px) {
+//   .topimage {
+//     min-height: 400px;
+//     &__image {
+//       min-height: 400px;
+//       background-size: contain;
+//       &__school {
+//         background-position: center 0%;
+//       }
+
+//       &__portpholio {
+//         &__school {
+//           background-position: center 0%;
+//         }
+
+//         &__promotion {
+//           background-position: center 0%;
+//         }
+//       }
+
+//       &__promotion {
+//         background-position: center 0%;
+//       }
+//     }
+//   }
+// }
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+
+  .backstage {
+    &__title {
+      margin-bottom: 0px;
+      margin-top: 20px;
+    }
+  }
+
+  .feedback {
+    &__title {
+      margin-bottom: 30px;
+    }
+  }
+
+  .backstage {
+    margin-bottom: 40px;
+    &__title {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .topimage {
+    height: 280px;
+
+    &__image {
+      position: absolute;
+
+      &.school__bg {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .videography {
+    &__title {
+      font-size: 25px;
+    }
+
+    &__block {
+      &__title {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      &__button {
+        font-size: 14px;
+        padding: 5px 20px;
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 0 20px;
+  }
+
+  .aboutus {
+    p {
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 13px;
+    }
+  }
+
+  .photography {
+    padding-top: 40px;
+
+    &__title {
+      font-size: 25px;
+      margin-bottom: 40px;
+    }
+
+    &__card {
+      column-gap: 30px;
+      margin-bottom: 40px;
+
+      &__desc {
+        h1 {
+          font-size: 21px;
+          margin-bottom: 50px;
+        }
+
+        a {
+          font-size: 14px;
+        }
+
+        &__button {
+          padding: 10px 15px;
+        }
+
+        &__buttons {
+          column-gap: 20px;
+        }
+      }
+
+      &__images {
+        column-gap: 5px;
+
+        &__main {
+          width: 220px;
+          height: 220px;
+        }
+
+        &__secondary {
+          div {
+            width: 107px;
+            height: 107px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .photography {
+    padding-top: 35px;
+
+    &__title {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    &__card {
+      column-gap: 30px;
+      margin-bottom: 35px;
+
+      &__desc {
+        h1 {
+          font-size: 17px;
+          margin-bottom: 30px;
+        }
+
+        a {
+          font-size: 12px;
+        }
+
+        &__button {
+          padding: 8px 10px;
+        }
+      }
+
+      &__images {
+        column-gap: 5px;
+
+        &__main {
+          width: 180px;
+          height: 180px;
+        }
+
+        &__secondary {
+          div {
+            width: 87px;
+            height: 87px;
+            margin-bottom: 6px;
+          }
+        }
+      }
+    }
+  }
+
+  .aboutus {
+    &__block {
+      padding: 10px 30px 20px 30px;
+
       p {
-        font-size: 27px;
+        font-size: 11px;
       }
     }
-    &__whatsup {
-      column-gap: 21px;
+  }
+
+  .videography {
+    margin-bottom: 35px;
+    &__title {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    &__block {
+      padding: 20px 0;
+      &__title {
+        font-size: 12px;
+        margin-bottom: 15px;
+      }
+
+      &__button {
+        font-size: 12px;
+        padding: 5px 15px;
+      }
+    }
+  }
+
+  .backstage {
+    margin-bottom: 35px;
+    &__title {
+      font-size: 22px;
+      margin-top: 0px;
+    }
+  }
+}
+
+@media (max-width: 610px) {
+  .photography {
+    padding-top: 30px;
+
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__card {
+      flex-direction: column;
+
+      &__desc {
+        h1 {
+          display: none;
+        }
+
+        &__buttons {
+          column-gap: 50px;
+        }
+
+        a {
+          font-size: 14px;
+        }
+      }
+
+      &__images {
+        flex-direction: column;
+
+        &__main {
+          margin-bottom: 5px;
+          width: 300px;
+          height: 300px;
+        }
+
+        &__secondary {
+          flex-direction: row;
+          column-gap: 6px;
+          margin-bottom: 10px;
+
+          div {
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
+    }
+
+    &__card__mobile {
+      &__title {
+        display: flex;
+      }
+    }
+  }
+
+  .topimage {
+    &__image {
+      &.portpholio__bg {
+        &__school {
+          width: 150%;
+        }
+        &__promotion {
+          width: 150%;
+        }
+      }
+
+      &.promotion__bg {
+        width: 150%;
+      }
+    }
+  }
+
+  .backstage {
+    &__title {
+      margin-bottom: 0px;
+      margin-top: 20px;
+    }
+  }
+
+  .videography {
+    margin-bottom: 10px;
+
+    &__block {
+      width: 85%;
+      padding: 20px 10px;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutus {
+    &__block {
       p {
-        font-size: 27px;
+        font-size: 11px;
+      }
+
+      h1 {
+        font-size: 21px;
+        margin-bottom: 11px;
+      }
+
+      padding: 10px 10px 20px 10px;
+    }
+  }
+
+  .photography {
+    &__title {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    &__card {
+      margin-bottom: 25px;
+
+      &__mobile {
+        &__title {
+          h1 {
+            font-size: 17px;
+          }
+        }
       }
     }
+  }
+
+  .videography {
+    margin-bottom: 30px;
+    &__title {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+  }
+
+  .backstage {
+    &__title {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .topimage {
+    height: 250px;
+    &__image {
+      &.school__bg {
+        width: 120%;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .videography {
+    &__block {
+      padding: 15px;
+
+      &__title {
+        max-width: 300px;
+        font-size: 13px;
+        margin-bottom: 15px;
+      }
+
+      &__button {
+        padding: 4px 20px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 0;
+  }
+}
+
+@media (max-width: 470px) {
+  .topimage {
+    height: 210px;
+  }
+
+  .photography {
+    &__card {
+      &__images {
+        &__main {
+          width: 250px;
+          height: 250px;
+        }
+
+        &__secondary {
+          div {
+            width: 122px;
+            height: 122px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 465px) {
+  .photography {
+    padding-top: 20px;
+
+    &__title {
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+
+    &__card {
+      &__mobile {
+        &__title {
+          h1 {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .videography {
+    &__title {
+      font-size: 21px;
+    }
+  }
+
+  .backstage {
+    &__title {
+      font-size: 21px;
+    }
+
+    &__items {
+      column-gap: 20px;
+    }
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .wrapper {
+    padding: 0px;
+  }
+
+  .aboutus {
+    &__block {
+      h1 {
+        font-size: 23px;
+      }
+
+      p {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutus {
+    h1 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+  }
+}
+
+@keyframes container-load {
+  0% {
+    background-color: #a8a6a5;
+  }
+  50% {
+    background-color: #ffffff;
+  }
+  100% {
+    background-color: #a8a6a5;
   }
 }
