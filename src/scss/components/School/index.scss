@@ -615,7 +615,6 @@
       }
 
       &__left {
-        display: flex;
         justify-content: center;
         &__title {
           margin: 0 auto;
@@ -772,7 +771,6 @@
       }
 
       &__left {
-        display: flex;
         justify-content: center;
         &__title {
           &__main {
@@ -932,7 +930,6 @@
       }
 
       &__left {
-        display: flex;
         justify-content: center;
         &__title {
           &__main {
@@ -1019,12 +1016,6 @@
               height: 50px;
               margin-bottom: 25px;
             }
-
-            // img {
-            //   width: 60px;
-            //   height: 50px;
-            //   margin-bottom: 25px;
-            // }
           }
         }
       }
