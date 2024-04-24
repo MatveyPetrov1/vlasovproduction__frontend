@@ -6,7 +6,7 @@ const FeedbackVideo = ({ source }) => {
       {" "}
       <iframe
         src={source}
-        frameBorder="0"
+        frameborder="0"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
         allowfullscreen

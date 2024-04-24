@@ -20,13 +20,6 @@ const BurgerPopup = ({
 
   const dispatch = useDispatch();
 
-  const burgerPortpholioRef = useRef();
-  const burgerPortpholioWindowRef = useRef();
-  const burgerCityRef = useRef();
-  const burgerCityWindowRef = useRef();
-  const burgerServicesRef = useRef();
-  const burgerServicesWindowRef = useRef();
-
   const onClickCityBurger = (city, index) => {
     setIsOpenBurgerCity(false);
     onClickCity(city, index);
@@ -48,7 +41,6 @@ const BurgerPopup = ({
       <ul>
         <li
           className={`${styles.header__popup__burger__open} ${styles.header__popup__burger__item}`}
-          ref={burgerCityRef}
           onClick={() => setIsOpenBurgerCity(!isOpenBurgerCity)}
         >
           <Link>{city}</Link>
@@ -58,10 +50,7 @@ const BurgerPopup = ({
         {/* City popup */}
 
         {isOpenBurgerCity && (
-          <ul
-            className={styles.header__popup__burger__open__items}
-            ref={burgerCityWindowRef}
-          >
+          <ul className={styles.header__popup__burger__open__items}>
             {cities.map((city, index) => {
               return (
                 <li key={index}>
@@ -78,7 +67,6 @@ const BurgerPopup = ({
           <a href="/">Главная</a>
         </li>
         <li
-          ref={burgerPortpholioRef}
           className={styles.header__popup__burger__item}
           onClick={() => setIsOpenBurgerPortpholio(!isOpenBurgerPortpholio)}
         >
@@ -88,10 +76,7 @@ const BurgerPopup = ({
         {/* Portpholio popup */}
 
         {isOpenBurgerPortpholio && (
-          <ul
-            ref={burgerPortpholioWindowRef}
-            className={styles.header__popup__burger__open__items}
-          >
+          <ul className={styles.header__popup__burger__open__items}>
             <li>
               <a href="/portpholio/school">Школьная фотосъемка</a>
             </li>
@@ -102,7 +87,6 @@ const BurgerPopup = ({
         )}
         <li
           className={styles.header__popup__burger__item}
-          ref={burgerServicesRef}
           onClick={() => setIsOpenBurgerServices(!isOpenBurgerServices)}
         >
           <Link>Услуги</Link>
@@ -111,10 +95,7 @@ const BurgerPopup = ({
         {/* Services popup */}
 
         {isOpenBurgerServices && (
-          <ul
-            className={styles.header__popup__burger__open__items}
-            ref={burgerServicesWindowRef}
-          >
+          <ul className={styles.header__popup__burger__open__items}>
             <li>
               <a href="/school">Школьная фотосъемка</a>
             </li>

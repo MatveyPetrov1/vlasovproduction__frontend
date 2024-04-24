@@ -6,7 +6,7 @@ const BackstageMobileVideo = ({ source }) => {
       <iframe
         src={source}
         title="YouTube video player"
-        frameBorder="0"
+        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
         allowfullscreen
         className="backstage__items__item"

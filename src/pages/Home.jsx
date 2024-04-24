@@ -13,48 +13,27 @@ import Arrow from "../components/UI/Arrow";
 import Fullscreen from "../components/UI/Fullscreen";
 import { useInView } from "react-intersection-observer";
 import WOW from "wowjs";
+import { useMobile } from "../hooks/useMobile";
 
 const HomePage = () => {
   const dispatch = useDispatch();
 
   new WOW.WOW().init();
 
-  const [isMobile, setIsMobile] = React.useState(true);
+  const homeRef = useRef();
+  const applicationRef = useRef();
+
+  const { items, status } = useSelector((state) => state.home);
 
   const { ref, inView } = useInView({
     threshold: 0,
   });
 
-  const homeRef = useRef();
-
-  const applicationRef = useRef();
-  const { items, status } = useSelector((state) => state.home);
+  const { isMobile } = useMobile();
 
   useEffect(() => {
     dispatch(fetchHomeItems());
   }, []);
-
-  useEffect(() => {
-    if (status === "loaded" && homeRef.current.offsetWidth <= 768) {
-      setIsMobile(true);
-    } else if (status === "loaded" && homeRef.current.offsetWidth > 768) {
-      setIsMobile(false);
-    }
-
-    const handleResize = () => {
-      if (status === "loaded" && homeRef.current.offsetWidth <= 768) {
-        setIsMobile(true);
-      } else if (status === "loaded" && homeRef.current.offsetWidth > 768) {
-        setIsMobile(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [status]);
 
   return (
     <>

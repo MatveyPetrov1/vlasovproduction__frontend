@@ -21,7 +21,7 @@ const CarouselVid = ({ sliderVideos, isMobileAnimation }) => {
                 <div className={styles.carousel__items__container}>
                   <iframe
                     src={obj.video1}
-                    frameBorder="0"
+                    frameborder="0"
                     title={index}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                     allowfullscreen
@@ -31,7 +31,7 @@ const CarouselVid = ({ sliderVideos, isMobileAnimation }) => {
                 <div className={styles.carousel__items__container}>
                   <iframe
                     src={obj.video2}
-                    frameBorder="0"
+                    frameborder="0"
                     title={index}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                     allowfullscreen
@@ -41,7 +41,7 @@ const CarouselVid = ({ sliderVideos, isMobileAnimation }) => {
                 <div className={styles.carousel__items__container}>
                   <iframe
                     src={obj.video3}
-                    frameBorder="0"
+                    frameborder="0"
                     title={index}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                     allowfullscreen

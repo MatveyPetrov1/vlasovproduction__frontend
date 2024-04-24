@@ -16,8 +16,6 @@ const PhotographyCard = ({
 }) => {
   const dispatch = useDispatch();
 
-  const [isLoaded, setIsLoaded] = React.useState();
-
   const onClickButton = (page) => {
     if (page === 1) {
       dispatch(setCurrentPage(1));
