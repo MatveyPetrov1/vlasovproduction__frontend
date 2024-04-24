@@ -79,6 +79,7 @@ const SchoolPhotographyCard = ({
   const openSmallCarousel = (color) => {
     return (
       <div className="school__card__carousel__container load_animation">
+        <div className="spin__loader"></div>
         <Carousel
           className="school__card__carousel"
           style={
@@ -127,6 +128,7 @@ const SchoolPhotographyCard = ({
           className="school__card__right__content__secondary__container load_animation"
           key={index}
         >
+          <div className="spin__loader"></div>
           <img
             key={index}
             src={source[`${color}`]}
@@ -324,7 +326,7 @@ const SchoolPhotographyCard = ({
             className={
               isMobile
                 ? "school__card__left__title school__card2__right__title"
-                : "school__card__left__title school__card2__right__title wow"
+                : "school__card__left__title card2 school__card2__right__title wow"
             }
             style={isMobile ? { animation: "none" } : {}}
           >

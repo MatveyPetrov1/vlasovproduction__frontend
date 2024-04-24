@@ -23,6 +23,7 @@
 
     &__container {
       width: 502px;
+      height: 401px;
       margin-top: 90px;
       display: flex;
       justify-content: center;
@@ -62,6 +63,10 @@
         100% {
           transform: translateX(0px);
         }
+      }
+
+      &.card2 {
+        animation: 1.5s card2-title;
       }
 
       &__main {
@@ -158,6 +163,8 @@
           align-items: center;
           overflow: hidden;
           background-color: #fff;
+          justify-content: center;
+          align-items: center;
 
           &:hover {
             transform: scale(1.1);
@@ -167,6 +174,7 @@
             width: 100%;
             display: none;
             animation: 1s img-load;
+            z-index: 100;
 
             @keyframes img-load {
               0% {
@@ -257,5 +265,14 @@
         display: none;
       }
     }
+  }
+}
+
+@keyframes card2-title {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
