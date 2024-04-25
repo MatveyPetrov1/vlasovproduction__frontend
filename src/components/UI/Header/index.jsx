@@ -123,7 +123,7 @@ const Header = () => {
       {/* Header */}
 
       <div className="container">
-        <div className={styles.header__wrapper}>
+        <nav className={styles.header__wrapper}>
           {/* Burger */}
 
           <div ref={burgerRef} className={styles.header__burger}>
@@ -193,7 +193,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   );

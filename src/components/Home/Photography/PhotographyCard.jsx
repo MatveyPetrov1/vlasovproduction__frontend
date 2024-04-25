@@ -13,6 +13,7 @@ const PhotographyCard = ({
   url2,
   title,
   isMobile,
+  button,
 }) => {
   const dispatch = useDispatch();
 
@@ -81,7 +82,7 @@ const PhotographyCard = ({
             href={url2}
             onClick={() => onClickButton(2)}
           >
-            Хочу съемку
+            {button}
           </a>
         </div>
       </div>

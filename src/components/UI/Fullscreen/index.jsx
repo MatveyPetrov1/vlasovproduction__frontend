@@ -17,7 +17,7 @@ const Fullscreen = () => {
     >
       {/* Image */}
 
-      <img src={currentImage} alt="" />
+      <img src={currentImage} alt="vlasov photo" />
       <div
         className={styles.fullscreen__photography__wrapper}
         onClick={() => dispatch(setIsOpen(false))}
