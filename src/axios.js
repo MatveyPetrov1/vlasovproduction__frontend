@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://kjoidsjfsdfiohjg.ru",
+  baseURL: "https://vlasovback.ru",
 });
 
 export default instance;
